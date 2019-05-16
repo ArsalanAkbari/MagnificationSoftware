@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F12C67D-D1EC-440E-84D2-C30E142EEF52}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MagnifierSoftwareV_1</RootNamespace>
+    <AssemblyName>MagnifierSoftwareV-1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gma.System.MouseKeyHook, Version=5.6.130.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MouseKeyHook.5.6.0\lib\net40\Gma.System.MouseKeyHook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tobii.Interaction.Model, Version=0.7.3.333, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tobii.Interaction.0.7.3\lib\net45\Tobii.Interaction.Model.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Tobii.Interaction.Net, Version=0.7.3.333, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tobii.Interaction.0.7.3\lib\net45\Tobii.Interaction.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Tobii.Research, Version=1.6.1.987, Culture=neutral, PublicKeyToken=70326046dcdce6cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tobii.Research.x86.1.6.1.987\lib\net45\Tobii.Research.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aliasing\CreatMetaFile.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="EvaluationEye\ballSpeedSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationEye\ballSpeedSetting.Designer.cs">
+      <DependentUpon>ballSpeedSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationEye\CalibrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationEye\CalibrationForm.Designer.cs">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationEye\ChartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationEye\ChartsForm.Designer.cs">
+      <DependentUpon>ChartsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationEye\InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationEye\InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EvaluationEye\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EvaluationEye\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EyeMove\GazeCalibrator.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowBothEyeAndHead.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowHead.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowLeftEyeAndHead.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowRightEye.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowRightEyeAndHead.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowsBothEye.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowsLeftEye.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\WhereAmI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EyeMove\MagnifierWindow\WhereAmI.Designer.cs">
+      <DependentUpon>WhereAmI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EyeMove\MouseController.cs" />
+    <Compile Include="EyeMove\MagnifierWindow\OverlayEyeNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EyeMove\MagnifierWindow\OverlayEyeNew.Designer.cs">
+      <DependentUpon>OverlayEyeNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EyeMove\WarpPointers\CombineEyes.cs" />
+    <Compile Include="EyeMove\WarpPointers\GetEyeGaze.cs" />
+    <Compile Include="EyeMove\WarpPointers\OneEyeLeft.cs" />
+    <Compile Include="EyeMove\PrecisionPointers\EyeXPrecisionPointer.cs" />
+    <Compile Include="EyeMove\PrecisionPointers\PrecisionPointer.cs" />
+    <Compile Include="EyeMove\WarpPointers\EyeXWarpPointer.cs" />
+    <Compile Include="EyeMove\WarpPointers\OneEyeRight.cs" />
+    <Compile Include="EyeMove\WarpPointers\WarpPointer.cs" />
+    <Compile Include="EytrackerInit.cs" />
+    <Compile Include="MagnifierMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MagnifierMainForm.Designer.cs">
+      <DependentUpon>MagnifierMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aliasing\MetaFile.cs" />
+    <Compile Include="MouseMove\MouseMoveTest\Magnifier.cs" />
+    <Compile Include="MouseMove\MouseMoveTest\MouseMoveMagnifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MouseMove\MouseMoveTest\MouseMoveMagnifier.Designer.cs">
+      <DependentUpon>MouseMoveMagnifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MouseMove\MouseMoveTest\NativeMethods.cs" />
+    <Compile Include="MouseMove\MouseMoveTest\NativeStructures.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tutorial.Designer.cs">
+      <DependentUpon>Tutorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XmlUtility.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EvaluationEye\ballSpeedSetting.resx">
+      <DependentUpon>ballSpeedSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationEye\CalibrationForm.resx">
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationEye\ChartsForm.resx">
+      <DependentUpon>ChartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationEye\InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EvaluationEye\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EyeMove\MagnifierWindow\WhereAmI.resx">
+      <DependentUpon>WhereAmI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EyeMove\MagnifierWindow\OverlayEyeNew.resx">
+      <DependentUpon>OverlayEyeNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagnifierMainForm.aa.resx">
+      <DependentUpon>MagnifierMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MagnifierMainForm.resx">
+      <DependentUpon>MagnifierMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MouseMove\MouseMoveTest\MouseMoveMagnifier.resx">
+      <DependentUpon>MouseMoveMagnifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tutorial.resx">
+      <DependentUpon>Tutorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="License\license_key_00454713__-__Karlsruhe_Institute_of_IS404-100108245121" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_person_add_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_remove_red_eye_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_mouse_black_48dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_settings_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_close_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_zoom_out_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_zoom_in_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_expand_more_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_expand_less_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_remove_from_queue_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_add_to_queue_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visually-Impaired-296x300.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\automatically-hide-mouse-cursor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testConfiguration.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Subtractive_Colors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HiVis_LINK2.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitoring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitoring1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc-Mousesearch2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exiticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc-Mousesearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sight-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visually-Impaired-296x3001.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calibration-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calibration-mark1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pc-Mousesearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exiticon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EyeWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EyeWindow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evaluation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lineIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangleIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-shape-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Circel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zooming-magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eyetracker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eyetracker1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreenEye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_save_black_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_save_black_48dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speedometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-palette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint-palette %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets" Condition="Exists('..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets'))" />
+    <Error Condition="!Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets'))" />
+  </Target>
+  <Import Project="..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets" Condition="Exists('..\packages\Tobii.Interaction.0.7.3\build\Tobii.Interaction.targets')" />
+  <Import Project="..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
