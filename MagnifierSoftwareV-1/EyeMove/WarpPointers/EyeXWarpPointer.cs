@@ -5,7 +5,7 @@ using MagnifierSoftwareV_1.MouseMove;
 
 namespace MagnifierSoftwareV_1.EyeMove
 {
-    public class EyeXWarpPointer : WarpPointer
+    public class EyeXWarpPointer 
     {
         GazePointDataStream stream;
         //FixationDataStream stream;

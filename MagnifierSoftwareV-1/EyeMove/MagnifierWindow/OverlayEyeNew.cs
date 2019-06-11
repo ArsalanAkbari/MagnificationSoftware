@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using System.Drawing;
 using System.Threading;
-using System.Linq;
 using System.Runtime.InteropServices;
 using MagnifierSoftwareV_1.MouseMove.MouseMoveTest;
 using MagnifierSoftwareV_1.EyeMove.MagnifierWindow;
-using System.Windows.Forms;
 
 
 namespace MagnifierSoftwareV_1.EyeMove
@@ -17,41 +13,54 @@ namespace MagnifierSoftwareV_1.EyeMove
     public partial class OverlayEyeNew : Form
     {
         private Configuration mConfiguration;
-        public PointF mTargetPoint;
-        public PointF mCurrentPoint;
         private bool mFirstTime = true;
-        private Point mLastMagnifierPosition = Cursor.Position;
-        public Point targetGazePoint;
-        MouseController controller;
-        public bool fullScreen = false;
-        MagnifierWindowsBothEye mgBothEye;
-        MagnifierWindowsBothEyeAndHead mgBothEyeAndHead;
-        MagnifierWindowLeftEyeAndHead mgLeftEyeAndHead;
-        MagnifierWindowLeftEye mgLeftEye;
-        MagnifierWindowRightEye mgRightEye;
-        MagnifierWindowRightEyeAndHead mgRightEyeAndHead;
-        MagnifierWindowHead mgJustHead;
-        private string mConfigFileName = "configData.xml";
-        MagnifierMainForm mMainForm;
-
-        public bool checkForKeys;
-
-        public bool freeze = false; //stop magnification window by pressing the f4
-
-        bool IsBothEyeAndHead = false;
-        bool IsBothEye = false;
-
-        bool IsLeftEyeAndHead = false;
-        bool IsLeftEye = false;
-
-        bool IsRightEyeAndHead = false;
-        bool IsRightEye = false;
-
-        bool IsJustHeadAndHead = false;
-
+        private MagnifierWindowsBothEye mgBothEye;
+        private MagnifierWindowsBothEyeAndHead mgBothEyeAndHead;
+        private MagnifierWindowLeftEyeAndHead mgLeftEyeAndHead;
+        private MagnifierWindowLeftEye mgLeftEye;
+        private MagnifierWindowRightEye mgRightEye;
+        private MagnifierWindowRightEyeAndHead mgRightEyeAndHead;
+        private MagnifierWindowHead mgJustHead;
+        private MagnifierMainForm mMainForm;
+        private bool IsBothEyeAndHead = false;
+        private bool IsBothEye = false;
+        private bool IsLeftEyeAndHead = false;
+        private bool IsLeftEye = false;
+        private bool IsRightEyeAndHead = false;
+        private bool IsRightEye = false;
+        private bool IsJustHeadAndHead = false;
         private bool IsNormal; // window is normal
         private bool wAIOn;
 
+        private PointF mTargetPoint;
+        private PointF mCurrentPoint;
+        private bool fullScreen = false;
+        private bool checkForKeys;
+        private bool freeze = false; //stop magnification window by pressing the f4
+
+        private Point whereAmIPoint; // through using f2 button
+        private float temp = 0;
+        private string tempString;
+
+        public void setTargetPoint(PointF value)
+        {
+            this.mTargetPoint = value;
+        }
+
+        public bool getScreenMode()
+        {
+            return this.fullScreen;
+        }
+
+        public bool getFreezeMode()
+        {
+            return this.freeze;
+        }
+
+        public void setWhereAmIPoint(Point value)
+        {
+            this.whereAmIPoint = value;
+        }
 
 
         //wnidow Mode
@@ -73,23 +82,15 @@ namespace MagnifierSoftwareV_1.EyeMove
 
             this.DoubleBuffered = true;
 
-            controller = new MouseController(this, mConfiguration);
-            controller.setMovement(MouseController.Movement.HOTKEY);
-           // controller.Sensitivity = 7;
-            controller.setMovement(MouseController.Movement.CONTINUOUS);
-            controller.setMode(MouseController.Mode.BOTH_EYE_AND_HEAD);
-            
-
-            //this.KeyDown += new KeyEventHandler(HandleEsc);
-           // FormBorderStyle = FormBorderStyle.None;
-
             IsNormal = true; // window is normal
             wAIOn = false;
 
             checkForKeys = true;
             CheckForKeysJob();
             setGazeControllerMode();
-           
+          
+
+
         }
 
 
@@ -110,11 +111,6 @@ namespace MagnifierSoftwareV_1.EyeMove
             Width = Screen.PrimaryScreen.Bounds.Width;
             Height = Screen.PrimaryScreen.Bounds.Height;
 
-            controller = new MouseController(this, mConfiguration);
-            controller.setMovement(MouseController.Movement.HOTKEY);
-            controller.Sensitivity = 7;
-            controller.setMovement(MouseController.Movement.CONTINUOUS);
-            controller.setMode(MouseController.Mode.BOTH_EYE_AND_HEAD);
 
             //this.KeyDown += new KeyEventHandler(HandleEsc);
             FormBorderStyle = FormBorderStyle.None;
@@ -127,13 +123,16 @@ namespace MagnifierSoftwareV_1.EyeMove
             setGazeControllerMode();
         }
 
+
+
+
         private void setGazeControllerMode()
         {
             //Both Eye  ---------------------------------------------------------------------------------------------
 
             if (mConfiguration.bothEyeAndHead == true)
             {
-                controller.setMode(MouseController.Mode.BOTH_EYE_AND_HEAD);
+
                 IsBothEyeAndHead = true;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = false;
@@ -141,12 +140,11 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = false;
                 IsRightEye = false;
-                mgBothEyeAndHead = new MagnifierWindowsBothEyeAndHead(this, mConfiguration, this, controller);
+                mgBothEyeAndHead = new MagnifierWindowsBothEyeAndHead(this, mConfiguration, this);
             }
 
             if (mConfiguration.bothEye == true)
             {
-                controller.setMode(MouseController.Mode.BOTH_EYE);
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = false;
@@ -154,13 +152,13 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = true;
                 IsLeftEye = false;
                 IsRightEye = false;
-                mgBothEye = new MagnifierWindowsBothEye(this, mConfiguration, this, controller);
+                mgBothEye = new MagnifierWindowsBothEye(this, mConfiguration, this);
             }
 
             //Left Eye  ---------------------------------------------------------------------------------------------
             if (mConfiguration.leftEyeAndHead == true)
             {
-                controller.setMode(MouseController.Mode.LEFT_EYE_AND_HEAD);
+    
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = true;
                 IsRightEyeAndHead = false;
@@ -168,12 +166,12 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = false;
                 IsRightEye = false;
-                mgLeftEyeAndHead = new MagnifierWindowLeftEyeAndHead(this, mConfiguration, this, controller );
+                mgLeftEyeAndHead = new MagnifierWindowLeftEyeAndHead(this, mConfiguration, this);
             }
 
             if (mConfiguration.leftEye == true)
             {
-                controller.setMode(MouseController.Mode.LEFT_EYE);
+            
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = false;
@@ -181,14 +179,14 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = true;
                 IsRightEye = false;
-                mgLeftEye = new MagnifierWindowLeftEye(this, mConfiguration, this, controller);
+                mgLeftEye = new MagnifierWindowLeftEye(this, mConfiguration, this);
             }
 
             //Right Eye  ---------------------------------------------------------------------------------------------
 
             if (mConfiguration.rightEyeAndHead == true)
             {
-                controller.setMode(MouseController.Mode.RIGHT_EYE_AND_HEAD);
+           
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = true;
@@ -196,12 +194,12 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = false;
                 IsRightEye = false;
-                mgRightEyeAndHead = new MagnifierWindowRightEyeAndHead(this, mConfiguration, this, controller);
+                mgRightEyeAndHead = new MagnifierWindowRightEyeAndHead(this, mConfiguration, this);
             }
 
             if (mConfiguration.rightEye == true)
             {
-                controller.setMode(MouseController.Mode.RIGHT_EYE);
+            
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = false;
@@ -209,14 +207,14 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = false;
                 IsRightEye = true;
-                mgRightEye = new MagnifierWindowRightEye(this, mConfiguration, this, controller);
+                mgRightEye = new MagnifierWindowRightEye(this, mConfiguration, this);
             }
 
             //Just Head  ---------------------------------------------------------------------------------------------
 
             if (mConfiguration.justHead == true)
             {
-                controller.setMode(MouseController.Mode.JUST_HEAD);
+            
                 IsBothEyeAndHead = false;
                 IsLeftEyeAndHead = false;
                 IsRightEyeAndHead = false;
@@ -224,7 +222,7 @@ namespace MagnifierSoftwareV_1.EyeMove
                 IsBothEye = false;
                 IsLeftEye = false;
                 IsRightEye = false;
-                mgJustHead = new MagnifierWindowHead(this, mConfiguration, this, controller);
+                mgJustHead = new MagnifierWindowHead(this, mConfiguration, this);
 
             }
         }
@@ -235,10 +233,9 @@ namespace MagnifierSoftwareV_1.EyeMove
             return Screen.PrimaryScreen.Bounds;
         }
 
-        //old Version
         public void HandleTimer(object sender, EventArgs e)
         {
-
+            showWhereIam();
             if (freeze == false)
             {
                 Width = mConfiguration.MagnifierWidth;
@@ -316,11 +313,26 @@ namespace MagnifierSoftwareV_1.EyeMove
         }
 
 
-        public bool showWhereAmI = false;
-        public Point wWhereAmIPoint;
+       
+       
 
-        float temp = 0;
-        string tempString;
+
+        //to have a dynamic where i am Point
+        /*
+        * if the users result by calibration is more than 80% in each of eyes, we can use followEyes option, in other 
+        * cases just mouse position.
+        */
+
+        private void showWhereIam()
+        {
+
+            if (wAIOn == true)
+            {
+                WhereAmI wAI = new WhereAmI(mConfiguration.whereIamPointFollowsEyes , mConfiguration);
+                wAI.Show();
+
+            }
+        }
 
 
         private void CheckForKeys()
@@ -421,83 +433,84 @@ namespace MagnifierSoftwareV_1.EyeMove
                             if (wAIOn == false)
                             {
                                // checkForKeys = false;
-                                wAIOn = true;
+                               
                                 BeginInvoke(new MethodInvoker(delegate
                                 {
 
-                                    WhereAmI wAI = new WhereAmI(wWhereAmIPoint, mConfiguration);
+                                    // WhereAmI wAI = new WhereAmI(wWhereAmIPoint, mConfiguration);
 
-                                    wAI.Show();
-
-                                        temp = mConfiguration.ZoomFactor;
-                                        mConfiguration.ZoomFactor = 1;
-
-                                        if (mConfiguration.invertColors == true)
-                                        {
-                                            mConfiguration.invertColors = false;
-                                            tempString = "invertColors";
-                                        }
-
-                                        else if (mConfiguration.normal == true)
-                                        {
-                                            mConfiguration.normal = false;
-                                            tempString = "normal";
-                                        }
-
-                                        else if (mConfiguration.achromatomaly == true)
-                                        {
-                                            mConfiguration.achromatomaly = false;
-                                            tempString = "achromatomaly";
-                                        }
-
-                                        else if (mConfiguration.achromatopsia == true)
-                                        {
-                                            mConfiguration.achromatopsia = false;
-                                            tempString = "achromatopsia";
-
-                                        }
-                                        else if (mConfiguration.deuteranopia == true)
-                                        {
-                                            mConfiguration.deuteranopia = false;
-                                            tempString = "deuteranopia";
-
-                                        }
-                                        else if (mConfiguration.deuteranomaly == true)
-                                        {
-                                            mConfiguration.deuteranomaly = false;
-                                            tempString = "deuteranomaly";
-
-                                        }
-                                        else if (mConfiguration.protanomaly == true)
-                                        {
-                                            mConfiguration.protanomaly = false;
-                                            tempString = "protanomaly";
-
-                                        }
-                                        else if (mConfiguration.protanopia == true)
-                                        {
-                                            mConfiguration.protanopia = false;
-                                            tempString = "protanopia";
-
-                                        }
-                                        else if (mConfiguration.tritanomaly == true)
-                                        {
-                                            mConfiguration.tritanomaly = false;
-                                            tempString = "tritanomaly";
-
-                                        }
-                                        else if (mConfiguration.tritanopia == true)
-                                        {
-                                            mConfiguration.tritanopia = false;
-                                            tempString = "tritanopia";
-                                        }
-
-                                        mConfiguration.normal = true;
+                                    //wAI.Show();
                                     
+
+                                    temp = mConfiguration.ZoomFactor;
+                                    mConfiguration.ZoomFactor = 1;
+
+                                    if (mConfiguration.invertColors == true)
+                                    {
+                                        mConfiguration.invertColors = false;
+                                        tempString = "invertColors";
+                                    }
+
+                                    else if (mConfiguration.normal == true)
+                                    {
+                                        mConfiguration.normal = false;
+                                        tempString = "normal";
+                                    }
+
+                                    else if (mConfiguration.achromatomaly == true)
+                                    {
+                                        mConfiguration.achromatomaly = false;
+                                        tempString = "achromatomaly";
+                                    }
+
+                                    else if (mConfiguration.achromatopsia == true)
+                                    {
+                                        mConfiguration.achromatopsia = false;
+                                        tempString = "achromatopsia";
+
+                                    }
+                                    else if (mConfiguration.deuteranopia == true)
+                                    {
+                                        mConfiguration.deuteranopia = false;
+                                        tempString = "deuteranopia";
+
+                                    }
+                                    else if (mConfiguration.deuteranomaly == true)
+                                    {
+                                        mConfiguration.deuteranomaly = false;
+                                        tempString = "deuteranomaly";
+
+                                    }
+                                    else if (mConfiguration.protanomaly == true)
+                                    {
+                                        mConfiguration.protanomaly = false;
+                                        tempString = "protanomaly";
+
+                                    }
+                                    else if (mConfiguration.protanopia == true)
+                                    {
+                                        mConfiguration.protanopia = false;
+                                        tempString = "protanopia";
+
+                                    }
+                                    else if (mConfiguration.tritanomaly == true)
+                                    {
+                                        mConfiguration.tritanomaly = false;
+                                        tempString = "tritanomaly";
+
+                                    }
+                                    else if (mConfiguration.tritanopia == true)
+                                    {
+                                        mConfiguration.tritanopia = false;
+                                        tempString = "tritanopia";
+                                    }
+
+                                    mConfiguration.normal = true;
+
 
                                 }));
                                 Thread.Sleep(500);
-                               
+                                wAIOn = true;
 
                             }
                             else if (wAIOn == true)
@@ -828,6 +841,7 @@ namespace MagnifierSoftwareV_1.EyeMove
             ColorKey = 0x1,
             Alpha = 0x1
         }
+
 
 
         //activate mouse events in magnification window

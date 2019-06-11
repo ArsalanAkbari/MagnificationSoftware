@@ -68,6 +68,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             checkForKeys = true; // to check key inputs
             CheckForKeysJob();
+            
             //this.KeyDown += new KeyEventHandler(Form_KeyDown);
         }
 
@@ -75,7 +76,8 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
         public void HandleTimer(object sender, EventArgs e)
         {
-            
+            showWhereIam();
+
             Width = mConfiguration.MagnifierWidth;
             Height = mConfiguration.MagnifierHeight ;
 
@@ -163,6 +165,17 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
         bool invert = false;
 
+        private void showWhereIam()
+        {
+
+            if (wAIOn == true)
+            {
+                WhereAmI wAI = new WhereAmI(false, mConfiguration);
+                wAI.Show();
+
+            }
+        }
+
         private void CheckForKeys()
         {
             //controlKey = false;
@@ -238,9 +251,11 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
                             if (wAIOn == false)
                             {
                                 // checkForKeys = false;
-                                wAIOn = true;
+                               
 
-                                WhereAmI wAI = new WhereAmI(wWhereAmIPoint, mConfiguration);
+                                // WhereAmI wAI = new WhereAmI(wWhereAmIPoint, mConfiguration);
+                               // wAI.Show();
+
                                 BeginInvoke(new MethodInvoker(delegate
                                 {
 
@@ -308,11 +323,11 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
                                     }
 
                                     mConfiguration.normal = true;
-                                    wAI.Show();
 
                                 }));
 
                                 Thread.Sleep(500);
+                                wAIOn = true;
                             }
                             else if (wAIOn == true)
                             {

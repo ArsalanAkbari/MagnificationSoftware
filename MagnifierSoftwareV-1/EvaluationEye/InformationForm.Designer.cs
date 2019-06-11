@@ -31,14 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationForm));
             this.userName_label = new System.Windows.Forms.Label();
             this.userName_textBox = new System.Windows.Forms.TextBox();
-            this.BothEye_checkBox = new System.Windows.Forms.CheckBox();
-            this.LeftEye_checkBox = new System.Windows.Forms.CheckBox();
-            this.RightEye_checkBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.MiniMize_button = new System.Windows.Forms.Button();
             this.Exit_button = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_SensitivityFactor = new System.Windows.Forms.TrackBar();
             this.lbl_SensitivityFactor = new System.Windows.Forms.Label();
@@ -48,7 +44,6 @@
             this.button_OpenTestFolder = new System.Windows.Forms.Button();
             this.traceBaarSensitivityDownbutton = new System.Windows.Forms.Button();
             this.traceBaarSensitivityUpbutton = new System.Windows.Forms.Button();
-            this.button_BallSpeedTest = new System.Windows.Forms.Button();
             this.startTestButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb_SensitivityFactor)).BeginInit();
@@ -72,45 +67,6 @@
             this.userName_textBox.Name = "userName_textBox";
             this.userName_textBox.Size = new System.Drawing.Size(232, 20);
             this.userName_textBox.TabIndex = 6;
-            // 
-            // BothEye_checkBox
-            // 
-            this.BothEye_checkBox.AutoSize = true;
-            this.BothEye_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BothEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BothEye_checkBox.Location = new System.Drawing.Point(272, 600);
-            this.BothEye_checkBox.Name = "BothEye_checkBox";
-            this.BothEye_checkBox.Size = new System.Drawing.Size(101, 24);
-            this.BothEye_checkBox.TabIndex = 10;
-            this.BothEye_checkBox.Text = "Both Eyes";
-            this.BothEye_checkBox.UseVisualStyleBackColor = true;
-            this.BothEye_checkBox.CheckedChanged += new System.EventHandler(this.BothEye_checkBox_CheckedChanged);
-            // 
-            // LeftEye_checkBox
-            // 
-            this.LeftEye_checkBox.AutoSize = true;
-            this.LeftEye_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LeftEye_checkBox.Location = new System.Drawing.Point(272, 660);
-            this.LeftEye_checkBox.Name = "LeftEye_checkBox";
-            this.LeftEye_checkBox.Size = new System.Drawing.Size(87, 24);
-            this.LeftEye_checkBox.TabIndex = 11;
-            this.LeftEye_checkBox.Text = "Left Eye";
-            this.LeftEye_checkBox.UseVisualStyleBackColor = true;
-            this.LeftEye_checkBox.CheckedChanged += new System.EventHandler(this.LeftEye_checkBox_CheckedChanged);
-            // 
-            // RightEye_checkBox
-            // 
-            this.RightEye_checkBox.AutoSize = true;
-            this.RightEye_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RightEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RightEye_checkBox.Location = new System.Drawing.Point(272, 630);
-            this.RightEye_checkBox.Name = "RightEye_checkBox";
-            this.RightEye_checkBox.Size = new System.Drawing.Size(97, 24);
-            this.RightEye_checkBox.TabIndex = 12;
-            this.RightEye_checkBox.Text = "Right Eye";
-            this.RightEye_checkBox.UseVisualStyleBackColor = true;
-            this.RightEye_checkBox.CheckedChanged += new System.EventHandler(this.RightEye_checkBox_CheckedChanged);
             // 
             // panel1
             // 
@@ -173,18 +129,6 @@
             this.Exit_button.TabIndex = 35;
             this.Exit_button.UseVisualStyleBackColor = false;
             this.Exit_button.Click += new System.EventHandler(this.Exit_button_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(24, 600);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 20);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Chose Eye-Tracking Mode:";
             // 
             // label6
             // 
@@ -250,7 +194,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 438);
+            this.panel2.Location = new System.Drawing.Point(0, 437);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(976, 10);
             this.panel2.TabIndex = 39;
@@ -294,21 +238,6 @@
             this.traceBaarSensitivityUpbutton.UseVisualStyleBackColor = false;
             this.traceBaarSensitivityUpbutton.Click += new System.EventHandler(this.traceBaarSensitivityUpbutton_Click);
             // 
-            // button_BallSpeedTest
-            // 
-            this.button_BallSpeedTest.BackColor = System.Drawing.Color.White;
-            this.button_BallSpeedTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button_BallSpeedTest.Image = global::MagnifierSoftwareV_1.Properties.Resources.speedometer;
-            this.button_BallSpeedTest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_BallSpeedTest.Location = new System.Drawing.Point(376, 660);
-            this.button_BallSpeedTest.Name = "button_BallSpeedTest";
-            this.button_BallSpeedTest.Size = new System.Drawing.Size(261, 43);
-            this.button_BallSpeedTest.TabIndex = 38;
-            this.button_BallSpeedTest.Text = "Changing the Ball Speed";
-            this.button_BallSpeedTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_BallSpeedTest.UseVisualStyleBackColor = false;
-            this.button_BallSpeedTest.Click += new System.EventHandler(this.button_BallSpeedTest_Click);
-            // 
             // startTestButton
             // 
             this.startTestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -334,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(976, 448);
+            this.ClientSize = new System.Drawing.Size(976, 447);
             this.Controls.Add(this.button_OpenTestFolder);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
@@ -344,12 +273,7 @@
             this.Controls.Add(this.traceBaarSensitivityUpbutton);
             this.Controls.Add(this.tb_SensitivityFactor);
             this.Controls.Add(this.lbl_SensitivityFactor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button_BallSpeedTest);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.RightEye_checkBox);
-            this.Controls.Add(this.LeftEye_checkBox);
-            this.Controls.Add(this.BothEye_checkBox);
             this.Controls.Add(this.userName_label);
             this.Controls.Add(this.userName_textBox);
             this.Controls.Add(this.startTestButton);
@@ -373,8 +297,6 @@
         private System.Windows.Forms.Button Exit_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_BallSpeedTest;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button traceBaarSensitivityDownbutton;
         private System.Windows.Forms.Button traceBaarSensitivityUpbutton;
@@ -383,9 +305,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        public System.Windows.Forms.CheckBox BothEye_checkBox;
-        public System.Windows.Forms.CheckBox LeftEye_checkBox;
-        public System.Windows.Forms.CheckBox RightEye_checkBox;
         private System.Windows.Forms.Button button_OpenTestFolder;
     }
 }

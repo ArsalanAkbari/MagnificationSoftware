@@ -121,46 +121,6 @@ namespace MagnifierSoftwareV_1.EvaluationEye
             }
         }
 
-
-
-        private void BothEye_checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-            {
-                LeftEye_checkBox.Checked = false;
-                RightEye_checkBox.Checked = false;
-
-            }
-
-        }
-
-        private void RightEye_checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-            {
-                LeftEye_checkBox.Checked = false;
-                BothEye_checkBox.Checked = false;
-
-            }
-
-        }
-
-        private void LeftEye_checkBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-            {
-                BothEye_checkBox.Checked = false;
-                RightEye_checkBox.Checked = false;
-
-            }
-
-        }
-
         System.Windows.Forms.ToolTip toolTip_StartTestButton = new System.Windows.Forms.ToolTip();
 
         private void startTestButton_MouseHover(object sender, EventArgs e)
@@ -190,13 +150,7 @@ namespace MagnifierSoftwareV_1.EvaluationEye
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
-        private void button_BallSpeedTest_Click(object sender, EventArgs e)
-        {
-            ballSpeedSetting bs = new ballSpeedSetting(mConfiguration , tb_SensitivityFactor.Value);
-            bs.Show();
-        }
-
+      
 
 
         private void traceBaarSensitivityUpbutton_Click(object sender, EventArgs e)

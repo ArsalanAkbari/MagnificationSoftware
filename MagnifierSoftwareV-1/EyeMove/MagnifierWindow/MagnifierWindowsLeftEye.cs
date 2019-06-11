@@ -14,17 +14,13 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
         private RECT magWindowRect = new RECT();
         private System.Windows.Forms.Timer timer;
         private Configuration mConfiguration = new Configuration();
-
         private OneEyeLeft leftEyeGaze;
         private EyeXPrecisionPointer headPoints;
-
-        MouseController controller;
-        float m_MAGFACTOR;
-
-        OverlayEyeNew mOverlayEyeNewForm;
+        private float m_MAGFACTOR;
+        private OverlayEyeNew mOverlayEyeNewForm;
 
 
-        public MagnifierWindowLeftEye(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm, MouseController mController)
+        public MagnifierWindowLeftEye(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm)
         {
 
             mConfiguration = configuration;
@@ -43,7 +39,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             headPoints = new EyeXPrecisionPointer(mConfiguration.senitivityOfHeadTracking);
 
 
-            controller = mController;
+         
 
             this.form = form;
             this.form.Resize += new EventHandler(form_Resize);
@@ -52,7 +48,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
 
-            if (overlayEyeNewForm.fullScreen == false)  //if window mode
+            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
                 timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             initialized = NativeMethods.MagInitialize();
@@ -113,13 +109,13 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             float slowMargin = 0;
             float fastMargin = 0;
 
-            if (mOverlayEyeNewForm.fullScreen || mConfiguration.MagnifierWidth >= (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
+            if (mOverlayEyeNewForm.getScreenMode() || mConfiguration.MagnifierWidth >= (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.02f;
                 fastMargin = 0.02f;
             }
 
-            if (!mOverlayEyeNewForm.fullScreen && mConfiguration.MagnifierWidth < (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
+            if (!mOverlayEyeNewForm.getScreenMode() && mConfiguration.MagnifierWidth < (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.25f;
                 fastMargin = 0.03f;
@@ -216,14 +212,14 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
             PointF target = Cursor.Position;
 
-            if (mOverlayEyeNewForm.freeze == false)
+            if (mOverlayEyeNewForm.getFreezeMode() == false)
             {
                 Point gazePoint = leftEyeGaze.GetWarpPoint();
                 Point warpPoint = leftEyeGaze.GetNextPoint(gazePoint);
                 target = calculateTargetPoint(warpPoint);
-                mOverlayEyeNewForm.mTargetPoint = target;
+                mOverlayEyeNewForm.setTargetPoint(target);
 
-                mOverlayEyeNewForm.wWhereAmIPoint = Cursor.Position;
+                mOverlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
             }
 
 
@@ -250,7 +246,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             setColor();
 
             //freeze window if user presss the f4
-            if (mOverlayEyeNewForm.freeze == false)
+            if (mOverlayEyeNewForm.getFreezeMode() == false)
             {
                 bool ret = NativeMethods.MagSetWindowSource(hwndMag, sourceRect);
 

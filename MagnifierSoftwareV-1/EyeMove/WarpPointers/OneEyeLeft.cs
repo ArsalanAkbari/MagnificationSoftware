@@ -7,7 +7,7 @@ using MagnifierSoftwareV_1.EyeMove;
 
 namespace MagnifierSoftwareV_1.EyeMove
 {
-    public class OneEyeLeft : WarpPointer
+    public class OneEyeLeft
     {
        // GazePointDataStream stream;
         //FixationDataStream stream;

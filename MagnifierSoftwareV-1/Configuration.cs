@@ -59,6 +59,9 @@ namespace MagnifierSoftwareV_1
         public bool rightEye = false;
         public bool rightEyeAndHead = false;
         public bool justHead = false;
+        public bool whereIamPointFollowsEyes = true;
+
+
 
         //Where I Am color
         public String whereIAmColor = Color.Red.Name;

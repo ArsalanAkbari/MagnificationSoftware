@@ -7,7 +7,7 @@ using Tobii.Interaction;
 
 namespace MagnifierSoftwareV_1.EyeMove.WarpPointers
 {
-    public class OneEyeRight : WarpPointer
+    public class OneEyeRight
     {
         // GazePointDataStream stream;
         //FixationDataStream stream;
@@ -104,21 +104,7 @@ namespace MagnifierSoftwareV_1.EyeMove.WarpPointers
         }
 
         //############################################################################################
-        public bool IsStarted()
-        {
-
-            EngineStateValue<Tobii.Interaction.Framework.GazeTracking> status = Program.EyeXHost.States.GetGazeTrackingAsync().Result;
-            return status.Value == Tobii.Interaction.Framework.GazeTracking.GazeTracked;
-
-        }
-
-        public bool IsWarpReady()
-        {
-            return sampleCount > 10;
-        }
-
-
-
+ 
         public Point calculateSmoothedPoint()
         {
             return calculateTrimmedMean();
@@ -194,26 +180,7 @@ namespace MagnifierSoftwareV_1.EyeMove.WarpPointers
             return samples[sampleIndex];
         }
 
-        public int GetSampleCount()
-        {
-            return sampleCount;
-        }
-
-        public int GetWarpTreshold()
-        {
-            return warpThreshold;
-        }
-
-        public int GetWarpThresholdHight()
-        {
-            return warpThresholdHight;
-        }
-
-        public int GetWarpThresholdWidth()
-        {
-            return warpThresholdWidth;
-        }
-
+      
 
         public Point GetWarpPoint()
         {
@@ -233,15 +200,5 @@ namespace MagnifierSoftwareV_1.EyeMove.WarpPointers
             return warpPoint;
         }
 
-        public void Dispose()
-        {
-            //stream.IsEnabled = false;
-        }
-
-        public void RefreshTracking()
-        {
-            sampleCount = 0;
-            setNewWarp = true;
-        }
     }
 }

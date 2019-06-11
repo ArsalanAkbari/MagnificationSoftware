@@ -10,7 +10,7 @@ using MagnifierSoftwareV_1.MouseMove;
 
 namespace MagnifierSoftwareV_1.EyeMove
 {
-    public class combineEyes : WarpPointer
+    public class combineEyes
     {
         // GazePointDataStream stream;
         //FixationDataStream stream;
@@ -126,20 +126,6 @@ namespace MagnifierSoftwareV_1.EyeMove
         }
 
         //############################################################################################
-        public bool IsStarted()
-        {
-
-            EngineStateValue<Tobii.Interaction.Framework.GazeTracking> status = Program.EyeXHost.States.GetGazeTrackingAsync().Result;
-            return status.Value == Tobii.Interaction.Framework.GazeTracking.GazeTracked;
-
-        }
-
-        public bool IsWarpReady()
-        {
-            return sampleCount > 10;
-        }
-
-
 
         public Point calculateSmoothedPoint()
         {
@@ -193,18 +179,7 @@ namespace MagnifierSoftwareV_1.EyeMove
             return p;
         }
 
-        private double calculateStdDev()
-        {
-            Point u = calculateMean();
-
-            double o = 0;
-            for (int i = 0; i < samples.Length; i++)
-            {
-                Point delta = Point.Subtract(samples[i], new System.Drawing.Size(u));
-                o += Math.Pow(delta.X, 2) + Math.Pow(delta.Y, 2);
-            }
-            return Math.Sqrt(o / samples.Length);
-        }
+  
 
         public override String ToString()
         {
@@ -215,27 +190,6 @@ namespace MagnifierSoftwareV_1.EyeMove
         {
             return samples[sampleIndex];
         }
-
-        public int GetSampleCount()
-        {
-            return sampleCount;
-        }
-
-        public int GetWarpTreshold()
-        {
-            return warpThreshold;
-        }
-
-        public int GetWarpThresholdHight()
-        {
-            return warpThresholdHight;
-        }
-
-        public int GetWarpThresholdWidth()
-        {
-            return warpThresholdWidth;
-        }
-
 
         public Point GetWarpPoint()
         {
@@ -266,15 +220,6 @@ namespace MagnifierSoftwareV_1.EyeMove
             return warpPoint;
         }
 
-        public void Dispose()
-        {
-            //stream.IsEnabled = false;
-        }
-
-        public void RefreshTracking()
-        {
-            sampleCount = 0;
-            setNewWarp = true;
-        }
+     
     }
 }

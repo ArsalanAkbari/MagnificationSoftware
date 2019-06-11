@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
-using MagnifierSoftwareV_1.EyeMove.WarpPointers;
 using MagnifierSoftwareV_1.EyeMove;
-using MagnifierSoftwareV_1.EyeMove.MagnifierWindow;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -19,22 +15,15 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
         private RECT magWindowRect = new RECT();
         private System.Windows.Forms.Timer timer;
         private Configuration mConfiguration = new Configuration();
-
-        private EyeXWarpPointer eyeXWarpPointer;
         private combineEyes combineEyeGaze;
-        private OneEyeLeft leftEyeGaze;
-        private OneEyeRight rightEyeGaze;
-        MouseController controller;
-        float m_MAGFACTOR;
-        PointF retTarget = new Point(0, 0);
-        PointF lastTarget = new Point(0, 0); // the last mean position that we calculated base on the previous gaze points. Note that this point is not the real gaze point.
-
-
-        OverlayEyeNew overlayEyeNewForm;
+        private float m_MAGFACTOR;
+        private PointF retTarget = new Point(0, 0);
+        private PointF lastTarget = new Point(0, 0); // the last mean position that we calculated base on the previous gaze points. Note that this point is not the real gaze point.
+        private OverlayEyeNew overlayEyeNewForm;
 
 
 
-        public MagnifierWindowsBothEye(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm, MouseController mController)
+        public MagnifierWindowsBothEye(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm)
         {
 
             mConfiguration = configuration;
@@ -52,7 +41,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             combineEyeGaze = new combineEyes(mConfiguration);
 
-            controller = mController;
+        
 
 
             this.form = form;
@@ -64,7 +53,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
 
-            if (overlayEyeNewForm.fullScreen == false)  //if window mode
+            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
                 timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             if (initialized)
@@ -82,6 +71,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
         void timer_Tick(object sender, EventArgs e)
         {
+           // NativeMethods.SetForegroundWindow(hwndMag);
             UpdateMaginifier();
         }
 
@@ -122,13 +112,13 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             float fastMargin = 0;
 
             //for speed
-            if (overlayEyeNewForm.fullScreen || mConfiguration.MagnifierWidth >= (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
+            if (overlayEyeNewForm.getScreenMode() || mConfiguration.MagnifierWidth >= (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.06f;
                 fastMargin = 0.03f;
             }
 
-            if (!overlayEyeNewForm.fullScreen && mConfiguration.MagnifierWidth < (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
+            if (!overlayEyeNewForm.getScreenMode() && mConfiguration.MagnifierWidth < (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.25f;
                 fastMargin = 0.03f;
@@ -238,7 +228,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             PointF target = Cursor.Position;
 
-            if (overlayEyeNewForm.freeze == false)
+            if (overlayEyeNewForm.getFreezeMode() == false)
             {
                 Point gazePoint = combineEyeGaze.GetGazePoint();
 
@@ -247,9 +237,9 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
                 target = calculateTargetPoint(warpPoint);
 
-                overlayEyeNewForm.mTargetPoint = target;
+                overlayEyeNewForm.setTargetPoint(target);
 
-                overlayEyeNewForm.wWhereAmIPoint = Cursor.Position;
+                overlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
             }
 
 
@@ -279,7 +269,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             setColor();
 
             //freeze window if user presss the f4
-            if (overlayEyeNewForm.freeze == false)
+            if (overlayEyeNewForm.getFreezeMode() == false)
             {
                 bool ret = NativeMethods.MagSetWindowSource(hwndMag, sourceRect);
 

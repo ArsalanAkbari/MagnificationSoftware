@@ -1,40 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Threading;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-
-using MagnifierSoftwareV_1.MouseMove.MouseMoveTest;
 
 namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 {
     public partial class WhereAmI : Form
     {
-        private PointF mCurrentPoint;
-        bool checkForKeys;
-        Configuration mConfiguration;
+       
+        private Configuration mConfiguration;
+        private bool mfollowEyes = false;
+        private combineEyes combineEyes;
 
- 
-
-
-        public WhereAmI(PointF currentPoint, Configuration configuration)
+        public WhereAmI(bool followEyes, Configuration configuration)
         {
 
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
+            mfollowEyes = followEyes;
             mConfiguration = configuration;
-            mCurrentPoint = currentPoint;
             KeyDown += new KeyEventHandler(HandleEsc);
+
+            combineEyes = new combineEyes(mConfiguration);
+
         }
+
+     
+
+
+        /*
+         * if the users result by calibration is more than 80% in each of eyes, we can use followEyes option, in other 
+         * cases just mouse position.
+         */
+
 
         private void onPaint(object sender, PaintEventArgs e)
         {
 
-
-          /*  mConfiguration.ZoomFactor = 1;
+           //mConfiguration.ZoomFactor = 1;
 
             SolidBrush newBrush;
 
@@ -43,28 +46,75 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             else
                 newBrush = new SolidBrush(Color.Red);
 
-            Rectangle rec = new Rectangle((int) Cursor.Position.X , (int)Cursor.Position.Y, 200, 200);
+            Rectangle rec;
+            
+            Rectangle rec2;
+            if (!mfollowEyes)
+            {
+                int x = Cursor.Position.X;
+                int y = Cursor.Position.Y;
 
-            e.Graphics.FillEllipse(newBrush, rec);
-            e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                //stay in screen
+                if (x - 100 <= 0)
+                    x = 100;
+                if (x - 100 >= Screen.PrimaryScreen.Bounds.Width)
+                    x = Screen.PrimaryScreen.Bounds.Width - 100;
+                if (y - 100 <= 0)
+                    y = 100;
+                if (y - 100 >= Screen.PrimaryScreen.Bounds.Height)
+                    y = Screen.PrimaryScreen.Bounds.Height - 100;
+
+                rec = new Rectangle(x - 100, y - 100, 200, 200);
+                e.Graphics.FillEllipse(newBrush, rec);
+                e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+                rec = new Rectangle(x - 25, y - 25, 50, 50);
+                e.Graphics.FillEllipse(new SolidBrush(Color.Yellow), rec);
+                e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                this.Invalidate();
 
 
-            System.Threading.Thread.Sleep(20);
+            }
 
-            //this.Invalidate();
+            else if (mfollowEyes)
+            {
+                
+                Point gazePoint = combineEyes.GetWarpPoint();
+                Point warpPoint = combineEyes.GetNextPoint(gazePoint);
 
-            /*  System.Threading.Thread.Sleep(200);
+                //stay in primary screen
+                if (warpPoint.X-100 <= 0)
+                    warpPoint.X = 100;
+                if (warpPoint.X - 100 >= Screen.PrimaryScreen.Bounds.Width)
+                    warpPoint.X = Screen.PrimaryScreen.Bounds.Width -100;
+                if (warpPoint.Y - 100 <= 0)
+                    warpPoint.Y = 100;
+                if (warpPoint.Y - 100 >= Screen.PrimaryScreen.Bounds.Height)
+                    warpPoint.Y = Screen.PrimaryScreen.Bounds.Height-100;
 
-              e.Graphics.FillEllipse(new SolidBrush(Color.Yellow), rec);
-              e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-              e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                //center of the circel
 
-              System.Threading.Thread.Sleep(200);
 
-              this.Invalidate();*/
+                int x = warpPoint.X;
+                int y = warpPoint.Y
+                    ;
+                rec = new Rectangle(x - 100, y - 100, 200, 200);
+                e.Graphics.FillEllipse(newBrush, rec);
+                e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+                rec = new Rectangle(x - 25, y - 25, 50, 50);
+                e.Graphics.FillEllipse(new SolidBrush(Color.Yellow), rec);
+                e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                this.Invalidate();
+            }
         }
 
+
+      
 
         private void HandleEsc(object sender, KeyEventArgs e)
         {
@@ -73,6 +123,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             {
                 this.Close();
             }
+
 
         }
 

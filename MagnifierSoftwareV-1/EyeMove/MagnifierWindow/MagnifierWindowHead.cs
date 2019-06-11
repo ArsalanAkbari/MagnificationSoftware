@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
-using MagnifierSoftwareV_1.EyeMove.WarpPointers;
 using MagnifierSoftwareV_1.EyeMove;
 using System.Windows.Forms;
 using Tobii.Interaction;
-using Tobii.Research;
 
 
 
@@ -21,16 +17,12 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
         private RECT magWindowRect = new RECT();
         private System.Windows.Forms.Timer timer;
         private Configuration mConfiguration = new Configuration();
-
         private EyeXPrecisionPointer headPoints;
-        MouseController controller;
-        float m_MAGFACTOR;
-        
-
-        OverlayEyeNew overlayEyeNewForm;
+        private float m_MAGFACTOR;
+        private OverlayEyeNew overlayEyeNewForm;
 
 
-        public MagnifierWindowHead(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm, MouseController mController)
+        public MagnifierWindowHead(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm)
         {
 
             mConfiguration = configuration;
@@ -46,7 +38,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             headPoints = new EyeXPrecisionPointer(mConfiguration.senitivityOfHeadTracking);
 
-            controller = mController;
+          
 
 
             this.form = form;
@@ -56,7 +48,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
 
-            if (overlayEyeNewForm.fullScreen == false)  //if window mode
+            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
                 timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             initialized = NativeMethods.MagInitialize();
@@ -175,17 +167,18 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             ret.top = (int)target.Y - height / 2;
 
             // Don't scroll outside desktop area.
-            if (ret.left < 0)
+            if (ret.left < 0 )
             {
                 ret.left = 0;
             }
-            if (ret.left > Screen.PrimaryScreen.Bounds.Width - width)
+
+            if (ret.left > Screen.PrimaryScreen.Bounds.Width - width )
             {
                 ret.left = Screen.PrimaryScreen.Bounds.Width - width;
             }
             ret.right = ret.left + width;
 
-            if (ret.top < 0)
+            if (ret.top < 0 )
             {
                 ret.top = 0;
             }
@@ -210,16 +203,17 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             PointF target = Cursor.Position;
 
-            if (overlayEyeNewForm.freeze == false)
+            if (overlayEyeNewForm.getFreezeMode() == false)
             {
                 Vector3 headPoint = headPoints.GetHeadPoint();
 
                 Point warpPoint = headPoints.GetNextPoint(new Point(this.overlayEyeNewForm.Width / 2, this.overlayEyeNewForm.Height / 2));
+
                 target = calculateTargetPoint(warpPoint);
 
-                overlayEyeNewForm.mTargetPoint = target;
+                overlayEyeNewForm.setTargetPoint(target);
 
-                overlayEyeNewForm.wWhereAmIPoint = Cursor.Position;
+                overlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
 
             }
 
@@ -244,7 +238,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             setColor();
 
             //freeze window if user presss the f4
-            if (overlayEyeNewForm.freeze == false)
+            if (overlayEyeNewForm.getFreezeMode() == false)
             {
                 bool ret = NativeMethods.MagSetWindowSource(hwndMag, sourceRect);
 

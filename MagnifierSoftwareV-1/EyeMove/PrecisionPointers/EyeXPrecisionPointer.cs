@@ -5,25 +5,37 @@ using Tobii.Interaction;
 
 namespace MagnifierSoftwareV_1.EyeMove
 {
-    class EyeXPrecisionPointer : PrecisionPointer
+    class EyeXPrecisionPointer
     {
+        enum PrecisionPointerMode
+        {
+            ROTATION,
+            TRANSLATION,
+            BOTH
+        }
+
         PrecisionPointerMode mode;
         bool started;
         HeadPoseStream headPoseStream;
         bool hasCalibrated;
         Vector3 calibrationPoint;
         Vector3[] samples;
-        int sampleIndex;
         
+
+        int sampleIndex;
         int sampleCount;
+
+      
+
         Point currentPoint;
         int sensitivity;
 
         public EyeXPrecisionPointer(int sensitivity)
         {
             mode = PrecisionPointerMode.ROTATION;
-            //samples = new Vector3[5];
             samples = new Vector3[5];
+
+
             this.sensitivity = sensitivity;
 
             headPoseStream = Program.EyeXHost.Streams.CreateHeadPoseStream();
@@ -37,16 +49,49 @@ namespace MagnifierSoftwareV_1.EyeMove
 
         private void OnNextHeadPose(object sender, StreamData<HeadPoseData> headPose)
         {
-             if (headPose.Data.HasRotation.HasRotationX || headPose.Data.HasRotation.HasRotationY )
+            if (headPose.Data.HasRotation.HasRotationY || headPose.Data.HasRotation.HasRotationX)
              {
                  sampleCount++;
                  sampleIndex++;
                  if (sampleIndex >= samples.Length)
-                     sampleIndex = 0;
+                    sampleIndex = 0;
                  samples[sampleIndex] = headPose.Data.HeadRotation;
              }
 
-          
+
+            /*   else if (headPose.Data.HasRotation.HasRotationY)
+               {
+                   sampleCountY++;
+                   sampleIndexY++;
+                   if (sampleIndexY >= samples.Length)
+                       sampleIndexY = 0;
+                   samplesY[sampleIndexY] = headPose.Data.HeadRotation;
+               }
+               else if ( headPose.Data.HasRotation.HasRotationZ)
+               {
+                   sampleCountZ++;
+                   sampleIndexZ++;
+                   if (sampleIndexZ >= samples.Length)
+                       sampleIndexZ = 0;
+                   samplesZ[sampleIndexZ] = headPose.Data.HeadRotation;
+               }
+
+               if ((sampleIndexX >= samples.Length) ||  (sampleIndexY >= samples.Length) ||   (sampleIndexZ >= samples.Length))
+               {
+
+                   sampleCount = Math.Max(Math.Max(sampleCountX , sampleCountY) , sampleCountZ);
+
+                   sampleIndex = Math.Max(Math.Max(sampleIndexX, sampleIndexY), sampleIndexZ);
+
+                   if (sampleCount == sampleCountX)
+                       samples[sampleIndex] = samplesX[sampleIndexX];
+
+                   else if (sampleCount == sampleCountY)
+                       samples[sampleIndex] = samplesY[sampleIndexY];
+
+                   else if (sampleCount == sampleCountZ)
+                       samples[sampleIndex] = samplesZ[sampleIndexZ];
+               }*/
 
         }
 
@@ -108,8 +153,6 @@ namespace MagnifierSoftwareV_1.EyeMove
         {
             return started;
         }
-
-      
 
         public Point calculateSmoothedCalibratedPoint()
         {

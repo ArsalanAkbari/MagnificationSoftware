@@ -14,6 +14,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -49,13 +49,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoItX3.Assembly, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a646454c8d475470, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoItX.Dotnet.3.3.14.5\lib\AutoItX3.Assembly.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Gma.System.MouseKeyHook, Version=5.6.130.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MouseKeyHook.5.6.0\lib\net40\Gma.System.MouseKeyHook.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -89,12 +105,6 @@
   <ItemGroup>
     <Compile Include="Aliasing\CreatMetaFile.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="EvaluationEye\ballSpeedSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EvaluationEye\ballSpeedSetting.Designer.cs">
-      <DependentUpon>ballSpeedSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="EvaluationEye\CalibrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +129,6 @@
     <Compile Include="EvaluationEye\test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
-    <Compile Include="EyeMove\GazeCalibrator.cs" />
     <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowBothEyeAndHead.cs" />
     <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowHead.cs" />
     <Compile Include="EyeMove\MagnifierWindow\MagnifierWindowLeftEyeAndHead.cs" />
@@ -133,7 +142,6 @@
     <Compile Include="EyeMove\MagnifierWindow\WhereAmI.Designer.cs">
       <DependentUpon>WhereAmI.cs</DependentUpon>
     </Compile>
-    <Compile Include="EyeMove\MouseController.cs" />
     <Compile Include="EyeMove\MagnifierWindow\OverlayEyeNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,13 +149,10 @@
       <DependentUpon>OverlayEyeNew.cs</DependentUpon>
     </Compile>
     <Compile Include="EyeMove\WarpPointers\CombineEyes.cs" />
-    <Compile Include="EyeMove\WarpPointers\GetEyeGaze.cs" />
     <Compile Include="EyeMove\WarpPointers\OneEyeLeft.cs" />
     <Compile Include="EyeMove\PrecisionPointers\EyeXPrecisionPointer.cs" />
-    <Compile Include="EyeMove\PrecisionPointers\PrecisionPointer.cs" />
     <Compile Include="EyeMove\WarpPointers\EyeXWarpPointer.cs" />
     <Compile Include="EyeMove\WarpPointers\OneEyeRight.cs" />
-    <Compile Include="EyeMove\WarpPointers\WarpPointer.cs" />
     <Compile Include="EytrackerInit.cs" />
     <Compile Include="MagnifierMainForm.cs">
       <SubType>Form</SubType>
@@ -185,9 +190,6 @@
     <Compile Include="XmlUtility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EvaluationEye\ballSpeedSetting.resx">
-      <DependentUpon>ballSpeedSetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EvaluationEye\CalibrationForm.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +230,7 @@
     </EmbeddedResource>
     <None Include="License\license_key_00454713__-__Karlsruhe_Institute_of_IS404-100108245121" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -292,7 +295,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 und x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
