@@ -111,19 +111,6 @@ namespace MagnifierSoftwareV_1
         }
        
 
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-
-        }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            int x = e.X;
-            int y = e.Y;
-
-            mPointMouseDown = new Point(e.X, e.Y);
-            mLastCursorPosition = Cursor.Position;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

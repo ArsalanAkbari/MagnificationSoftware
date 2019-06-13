@@ -104,7 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aliasing\CreatMetaFile.cs" />
-    <Compile Include="Configuration.cs" />
+    <Compile Include="Setting\Configuration.cs" />
     <Compile Include="EvaluationEye\CalibrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,17 +153,17 @@
     <Compile Include="EyeMove\PrecisionPointers\EyeXPrecisionPointer.cs" />
     <Compile Include="EyeMove\WarpPointers\EyeXWarpPointer.cs" />
     <Compile Include="EyeMove\WarpPointers\OneEyeRight.cs" />
-    <Compile Include="EytrackerInit.cs" />
-    <Compile Include="MagnifierMainForm.cs">
+    <Compile Include="Main\EytrackerInit.cs" />
+    <Compile Include="Main\MagnifierMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MagnifierMainForm.Designer.cs">
+    <Compile Include="Main\MagnifierMainForm.Designer.cs">
       <DependentUpon>MagnifierMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConfigurationForm.cs">
+    <Compile Include="Setting\ConfigurationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConfigurationForm.Designer.cs">
+    <Compile Include="Setting\ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Aliasing\MetaFile.cs" />
@@ -181,10 +181,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tutorial.cs">
+    <Compile Include="Tutorial\Tutorial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tutorial.Designer.cs">
+    <Compile Include="Tutorial\Tutorial.Designer.cs">
       <DependentUpon>Tutorial.cs</DependentUpon>
     </Compile>
     <Compile Include="XmlUtility.cs" />
@@ -208,13 +208,13 @@
     <EmbeddedResource Include="EyeMove\MagnifierWindow\OverlayEyeNew.resx">
       <DependentUpon>OverlayEyeNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MagnifierMainForm.aa.resx">
+    <EmbeddedResource Include="Main\MagnifierMainForm.aa.resx">
       <DependentUpon>MagnifierMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MagnifierMainForm.resx">
+    <EmbeddedResource Include="Main\MagnifierMainForm.resx">
       <DependentUpon>MagnifierMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConfigurationForm.resx">
+    <EmbeddedResource Include="Setting\ConfigurationForm.resx">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MouseMove\MouseMoveTest\MouseMoveMagnifier.resx">
@@ -225,7 +225,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tutorial.resx">
+    <EmbeddedResource Include="Tutorial\Tutorial.resx">
       <DependentUpon>Tutorial.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="License\license_key_00454713__-__Karlsruhe_Institute_of_IS404-100108245121" />

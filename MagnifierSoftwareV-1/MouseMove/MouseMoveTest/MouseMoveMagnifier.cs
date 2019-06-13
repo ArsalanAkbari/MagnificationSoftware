@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
@@ -12,21 +10,16 @@ using MagnifierSoftwareV_1.EyeMove.MagnifierWindow;
 
 namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 {
-
    
     public partial class MouseMoveMagnifier : Form
     {
 
-
         private System.Windows.Forms.Timer mTimer;
         private Configuration mConfiguration;
-
         private string mConfigFileName = "configData.xml";
-
         private Point mStartPoint;
         public PointF mTargetPoint;
         public PointF mCurrentPoint;
-
         private bool mFirstTime = true;
         private Point mLastMagnifierPosition = Cursor.Position;
         private Magnifier mg;
@@ -34,8 +27,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
         public bool checkForKeys;
         private bool controlKey = false;
         private bool iKey = false;
-
-        MagnifierMainForm mMainForm;
+        private MagnifierMainForm mMainForm;
 
         public MouseMoveMagnifier(Configuration configuration, Point startPoint, bool fullscreen, MagnifierMainForm mainForm)
         {
@@ -635,26 +627,6 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             Panel pnlTop4 = new Panel() { Width = 10, Dock = DockStyle.Right, BackColor = Color.Red };
             this.Controls.Add(pnlTop4);
-
-        }
-
-
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-
-        {
-
-            KeyEventArgs e = new KeyEventArgs(keyData);
-
-            if (e.Control && e.KeyCode == Keys.F12)
-
-            {
-
-                Console.WriteLine("HEYYYYYYYYYYYYYYYYYYYYYYYYY");
-
-
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
 
         }
 
