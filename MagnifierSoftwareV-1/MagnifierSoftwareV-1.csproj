@@ -228,7 +228,6 @@
     <EmbeddedResource Include="Tutorial\Tutorial.resx">
       <DependentUpon>Tutorial.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="License\license_key_00454713__-__Karlsruhe_Institute_of_IS404-100108245121" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -478,6 +477,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\paint-palette %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="License\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets" Condition="Exists('..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets')" />
