@@ -26,14 +26,12 @@ namespace MagnifierSoftwareV_1
         private Point mPointMouseDown;
         private Point mLastCursorPosition;
         private Configuration mConfiguration = new Configuration();
-        ConfigurationForm configForm;
-        bool magnifierFormIsShown = false;
-        public System.Timers.Timer mTimer;
-
-        OverlayEyeNew mg;
-        bool mgIsOpen = false;
-        MouseMoveMagnifier mouseMove;
-        bool mouseMoveIsOpen = false;
+        private ConfigurationForm configForm;
+        private bool magnifierFormIsShown = false;
+        private OverlayEyeNew mg;
+        private bool mgIsOpen = false;
+        private MouseMoveMagnifier mouseMove;
+        private bool mouseMoveIsOpen = false;
 
 
 
@@ -62,10 +60,7 @@ namespace MagnifierSoftwareV_1
             this.KeyDown += new KeyEventHandler(HandleEsc);
             //--- My Init ---
             FormBorderStyle = FormBorderStyle.None;
-            //TopMost = true;
             StartPosition = FormStartPosition.CenterScreen;
-
-            //mTimer.Tick += new EventHandler(RefreshMagnifier);
             ShowInTaskbar = true;
         }
 
@@ -376,7 +371,7 @@ namespace MagnifierSoftwareV_1
         }
 
 
-      
+      //eyetracking init
         private void button2_Click(object sender, EventArgs e)
         {
             /* NativeMethods.MagShowSystemCursor(true);
