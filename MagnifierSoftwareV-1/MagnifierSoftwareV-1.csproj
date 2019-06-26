@@ -104,6 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aliasing\CreatMetaFile.cs" />
+    <Compile Include="Calibration\CalibrationTobii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calibration\CalibrationTobii.Designer.cs">
+      <DependentUpon>CalibrationTobii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calibration\CalibrationTobiiInformations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calibration\CalibrationTobiiInformations.Designer.cs">
+      <DependentUpon>CalibrationTobiiInformations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setting\Configuration.cs" />
     <Compile Include="EvaluationEye\CalibrationForm.cs">
       <SubType>Form</SubType>
@@ -190,6 +202,12 @@
     <Compile Include="XmlUtility.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Calibration\CalibrationTobii.resx">
+      <DependentUpon>CalibrationTobii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calibration\CalibrationTobiiInformations.resx">
+      <DependentUpon>CalibrationTobiiInformations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EvaluationEye\CalibrationForm.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
     </EmbeddedResource>

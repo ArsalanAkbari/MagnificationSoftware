@@ -13,7 +13,7 @@ using MagnifierSoftwareV_1.EyeMove;
 using MagnifierSoftwareV_1.MouseMove;
 using MagnifierSoftwareV_1.MouseMove.MouseMoveTest;
 using MagnifierSoftwareV_1.EvaluationEye;
-using MagnifierSoftwareV_1.EyeMove.MagnifierWindow;
+using MagnifierSoftwareV_1.Calibration;
 using Tobii.Research;
 
 
@@ -154,6 +154,7 @@ namespace MagnifierSoftwareV_1
             mouseMove.Show();
             mouseMoveIsOpen = true;
 
+            TobiiCalibration_button.Enabled = false;
             MagniferUsingMouse_button.Enabled = false;
             FullscreenMaginfierEye_Button.Enabled = false;
             MaginfierEye_Button.Enabled = false;
@@ -172,7 +173,7 @@ namespace MagnifierSoftwareV_1
             mouseMove.Show();
             mouseMoveIsOpen = true;
 
-
+            TobiiCalibration_button.Enabled = false;
             MagniferUsingMouse_button.Enabled = false;
             FullscreenMaginfierEye_Button.Enabled = false;
             MaginfierEye_Button.Enabled = false;
@@ -188,6 +189,7 @@ namespace MagnifierSoftwareV_1
             mg = new OverlayEyeNew(mConfiguration, this);
             mg.Show();
 
+            TobiiCalibration_button.Enabled = false;
             MagniferUsingMouse_button.Enabled = false;
             FullscreenMaginfierEye_Button.Enabled = false;
             MaginfierEye_Button.Enabled = false;
@@ -203,6 +205,7 @@ namespace MagnifierSoftwareV_1
             mg.Show();
             mgIsOpen = true;
 
+            TobiiCalibration_button.Enabled = false;
             MagniferUsingMouse_button.Enabled = false;
             FullscreenMaginfierEye_Button.Enabled = false;
             MaginfierEye_Button.Enabled = false;
@@ -436,5 +439,12 @@ namespace MagnifierSoftwareV_1
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            CalibrationTobiiInformations calibrationTobii = new CalibrationTobiiInformations(mConfiguration);
+            calibrationTobii.ShowDialog(this);
+        }
+
     }
 }

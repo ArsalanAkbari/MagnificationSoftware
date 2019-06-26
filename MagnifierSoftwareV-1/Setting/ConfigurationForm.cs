@@ -28,6 +28,8 @@ namespace MagnifierSoftwareV_1.MouseMove
         {
             InitializeComponent();
 
+            this.Location = new Point(0,0);
+
             this.Cursor = NativeMethods.LoadCustomCursor();
 
             this.KeyPreview = true;
@@ -56,9 +58,6 @@ namespace MagnifierSoftwareV_1.MouseMove
             tb_SpeedFactor.Minimum = (int)(100 * Configuration.SPEED_FACTOR_MIN);
             tb_SpeedFactor.Value = (int)(100 * mConfiguration.SpeedFactor);
 
-            TopMost = false;
-           
-
             tb_Width.Maximum = 10;
             tb_Width.Minimum = 1;
             tb_Width.Value = mConfiguration.MagnifierWidth / (Screen.PrimaryScreen.Bounds.Width / 10);
@@ -77,7 +76,7 @@ namespace MagnifierSoftwareV_1.MouseMove
             SetComboBoxColorBlindnessText();
 
             //--- Init Boolean Settings ---
-            cb_HideMouseCursor.Checked = mConfiguration.HideMouseCursor;
+           
             //cb_reverseColor.Checked = mConfiguration.reverseColor;
 
             refreshTimer = new Timer();
@@ -85,7 +84,7 @@ namespace MagnifierSoftwareV_1.MouseMove
             refreshTimer.Interval = 33;
             refreshTimer.Start();
 
-            ShowInTaskbar = false;
+            ShowInTaskbar = true;
         }
 
 
@@ -300,21 +299,7 @@ namespace MagnifierSoftwareV_1.MouseMove
             else
                 mConfiguration.HideMouseCursor = false;
         }
-        private void HideMouseButton_Click(object sender, EventArgs e)
-        {
-            if (cb_HideMouseCursor.Checked)
-            {
-                cb_HideMouseCursor.Checked = false;
-                mConfiguration.HideMouseCursor = false;
-            }
-            else
-            {
-                cb_HideMouseCursor.Checked = true;
-                mConfiguration.HideMouseCursor = true;
-            }
-
-        }
-
+       
 
         private void Color_Blindness_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -689,49 +674,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                 }
             }
 
-            // if Keep Symetry
-         /*   else
-            {
-                if (mConfiguration.normal)
-                {
-                    g.DrawImage(
-                    mScreenImage,
-                    MainWindowsRectangle,
-                    0, 0,
-                    200, 200,
-                    GraphicsUnit.Pixel);
-
-                    Pen pen = new Pen(Color.White, 4);
-                    pen.Alignment = PenAlignment.Inset;
-                    e.Graphics.DrawRectangle(pen, magnifierWindowsRectangle);
-                    //e.Graphics.FillRectangle(Brushes.White, magnifierWindowsRectangle);
-                }
-
-                else
-                {
-                    //Background
-                    g.DrawImage(
-                    mScreenImage,
-                    MainWindowsRectangle,
-                    0, 0,
-                    200, 200,
-                    GraphicsUnit.Pixel);
-
-                    //rectangle
-                    g.DrawImage(
-                    mScreenImage,
-                    magnifierWindowsRectangle,
-                    0, 0,
-                    mConfiguration.MagnifierWidth / 5, mConfiguration.MagnifierWidth / 5,
-                    GraphicsUnit.Pixel,
-                    imageAttributes);
-
-                    Pen pen = new Pen(Color.White, 4);
-                    pen.Alignment = PenAlignment.Inset;
-                    e.Graphics.DrawRectangle(pen, magnifierWindowsRectangle);
-
-                }
-            }*/
+        
         }
 
 
@@ -909,18 +852,7 @@ namespace MagnifierSoftwareV_1.MouseMove
 
         }
 
-        private void HideMouseButton_MouseHover(object sender, EventArgs e)
-        {
-            toolTip_MouseHidden.SetToolTip(this.HideMouseButton, "Hide Pointer");
-            HideMouseButton.FlatAppearance.BorderColor = Color.DeepSkyBlue;
-        }
-
-        private void HideMouseButton_MouseLeave(object sender, EventArgs e)
-        {
-            HideMouseButton.FlatAppearance.BorderColor = Color.White;
-
-        }
-
+   
         private void MiniMize_button_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -1038,5 +970,6 @@ namespace MagnifierSoftwareV_1.MouseMove
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
+
     }
 }

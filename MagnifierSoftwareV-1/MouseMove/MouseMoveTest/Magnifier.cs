@@ -98,9 +98,6 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             //***************************************************************************************//
 
 
-
-            //NativeMethods.GetCursorPos(ref mousePoint);
-
             int width = (int)((magWindowRect.right - magWindowRect.left) / mConfiguration.ZoomFactor);
             int height = (int)((magWindowRect.bottom - magWindowRect.top) / mConfiguration.ZoomFactor);
 

@@ -23,6 +23,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
 
 
+
         public MagnifierWindowsBothEye(Form form, Configuration configuration, OverlayEyeNew overlayEyeNewForm)
         {
 
@@ -41,9 +42,6 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             combineEyeGaze = new combineEyes(mConfiguration);
 
-        
-
-
             this.form = form;
             this.form.Resize += new EventHandler(form_Resize);
             this.form.FormClosing += new FormClosingEventHandler(form_FormClosing);
@@ -52,9 +50,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
-
-            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
-                timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
+            timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             if (initialized)
             {
@@ -112,12 +108,14 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             float fastMargin = 0;
 
             //for speed
+            //Fullcreen
             if (overlayEyeNewForm.getScreenMode() || mConfiguration.MagnifierWidth >= (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.06f;
                 fastMargin = 0.03f;
             }
 
+            //not fullscrenn
             if (!overlayEyeNewForm.getScreenMode() && mConfiguration.MagnifierWidth < (Screen.PrimaryScreen.Bounds.Width / 10) * 7)
             {
                 slowMargin = 0.25f;
@@ -215,8 +213,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             return ret;
         }
 
-        [DllImport("msvcrt.dll", EntryPoint = "memset", CallingConvention = CallingConvention.Cdecl, SetLastError = false)]
-        public static extern IntPtr MemSet(IntPtr dest, int c, int byteCount);
+
 
 
         public void UpdateMaginifier()
@@ -224,37 +221,39 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             if ((!initialized) || (hwndMag == IntPtr.Zero))
                 return;
 
-            //*************************Take Eye Gaze From Both Eye******************************************//
-
+            
             PointF target = Cursor.Position;
-
-            if (overlayEyeNewForm.getFreezeMode() == false)
+            if (overlayEyeNewForm.getFreezeMode() == false && !overlayEyeNewForm.getLastMousePosition)
             {
                 Point gazePoint = combineEyeGaze.GetGazePoint();
-
                 Point warpPoint = combineEyeGaze.GetNextPoint(gazePoint);
-
-
+               
                 target = calculateTargetPoint(warpPoint);
-
                 overlayEyeNewForm.setTargetPoint(target);
-
-                overlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
+               
             }
+
+            if (overlayEyeNewForm.getLastMousePosition)
+            {
+                POINT mousePoint = new POINT();
+                NativeMethods.GetCursorPos(ref mousePoint);
+                target = new Point(mousePoint.x, mousePoint.y);
+                overlayEyeNewForm.setTargetPoint(target);
+                lastTarget = new Point(mousePoint.x, mousePoint.y);
+
+            }
+           
 
 
             //***********************************************************************************************//
             RECT hostWindowRect = new RECT();
-            NativeMethods.GetWindowRect(hwndMag, out hostWindowRect);
+             NativeMethods.GetWindowRect(hwndMag, out hostWindowRect);
 
 
-            int width = (int)((magWindowRect.right - magWindowRect.left) / m_MAGFACTOR);
-            int height = (int)((magWindowRect.bottom - magWindowRect.top) / m_MAGFACTOR);
+             int width = (int)((magWindowRect.right - magWindowRect.left) / m_MAGFACTOR);
+             int height = (int)((magWindowRect.bottom - magWindowRect.top) / m_MAGFACTOR);
 
-            RECT sourceRect = getInScreenRectFromTargetPoint(target, width, height);
-
-
-
+             RECT sourceRect = getInScreenRectFromTargetPoint(target, width, height);
 
             // Set the magnification factor.
             NativeMethods.MagTransform matrix = new NativeMethods.MagTransform(m_MAGFACTOR);

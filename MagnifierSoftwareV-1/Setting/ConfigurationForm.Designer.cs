@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurationForm));
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Color_Blindness_comboBox = new System.Windows.Forms.ComboBox();
-            this.cb_HideMouseCursor = new System.Windows.Forms.CheckBox();
             this.lbl_ZoomFactor = new System.Windows.Forms.Label();
             this.cb_Symmetry = new System.Windows.Forms.CheckBox();
             this.tb_ZoomFactor = new System.Windows.Forms.TrackBar();
@@ -57,7 +55,6 @@
             this.ChangeWIMcolor_button = new System.Windows.Forms.Button();
             this.button_SaveConfiguration = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.HideMouseButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.traceBaarWidthButton = new System.Windows.Forms.Button();
             this.traceBaarHightButton = new System.Windows.Forms.Button();
@@ -71,6 +68,15 @@
             this.Sensititvity_trackBar = new System.Windows.Forms.TrackBar();
             this.Sensititivity_label = new System.Windows.Forms.Label();
             this.DefaultSetting_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.trackBar_FastMargin = new System.Windows.Forms.TrackBar();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button__SlowMarginDown = new System.Windows.Forms.Button();
+            this.button__SlowMarginUp = new System.Windows.Forms.Button();
+            this.trackBar_SlowMargin = new System.Windows.Forms.TrackBar();
+            this.button__FastMarginDown = new System.Windows.Forms.Button();
+            this.button__FastMarginUp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tb_ZoomFactor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_SpeedFactor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_Width)).BeginInit();
@@ -79,18 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sensititvity_trackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_FastMargin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_SlowMargin)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(158, 867);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 30);
-            this.label2.TabIndex = 82;
-            this.label2.Text = "Hide Mouse Curser";
             // 
             // label1
             // 
@@ -124,20 +121,9 @@
             this.Color_Blindness_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Color_Blindness_comboBox.MaxDropDownItems = 20;
             this.Color_Blindness_comboBox.Name = "Color_Blindness_comboBox";
-            this.Color_Blindness_comboBox.Size = new System.Drawing.Size(353, 34);
+            this.Color_Blindness_comboBox.Size = new System.Drawing.Size(353, 33);
             this.Color_Blindness_comboBox.TabIndex = 71;
             this.Color_Blindness_comboBox.SelectedIndexChanged += new System.EventHandler(this.Color_Blindness_comboBox_SelectedIndexChanged);
-            // 
-            // cb_HideMouseCursor
-            // 
-            this.cb_HideMouseCursor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.cb_HideMouseCursor.ForeColor = System.Drawing.SystemColors.Window;
-            this.cb_HideMouseCursor.Location = new System.Drawing.Point(158, 863);
-            this.cb_HideMouseCursor.Name = "cb_HideMouseCursor";
-            this.cb_HideMouseCursor.Size = new System.Drawing.Size(164, 27);
-            this.cb_HideMouseCursor.TabIndex = 70;
-            this.cb_HideMouseCursor.Text = "Hide Mouse Cursor";
-            this.cb_HideMouseCursor.CheckedChanged += new System.EventHandler(this.cb_HideMouseCursor_CheckedChanged);
             // 
             // lbl_ZoomFactor
             // 
@@ -157,7 +143,7 @@
             this.cb_Symmetry.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cb_Symmetry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.cb_Symmetry.ForeColor = System.Drawing.SystemColors.Window;
-            this.cb_Symmetry.Location = new System.Drawing.Point(479, 864);
+            this.cb_Symmetry.Location = new System.Drawing.Point(840, 1016);
             this.cb_Symmetry.Name = "cb_Symmetry";
             this.cb_Symmetry.Size = new System.Drawing.Size(197, 29);
             this.cb_Symmetry.TabIndex = 65;
@@ -170,7 +156,7 @@
             this.tb_ZoomFactor.BackColor = System.Drawing.Color.Black;
             this.tb_ZoomFactor.Location = new System.Drawing.Point(138, 101);
             this.tb_ZoomFactor.Name = "tb_ZoomFactor";
-            this.tb_ZoomFactor.Size = new System.Drawing.Size(241, 48);
+            this.tb_ZoomFactor.Size = new System.Drawing.Size(241, 45);
             this.tb_ZoomFactor.TabIndex = 64;
             this.tb_ZoomFactor.Scroll += new System.EventHandler(this.tb_ZoomFactor_Scroll);
             // 
@@ -179,7 +165,7 @@
             this.tb_SpeedFactor.BackColor = System.Drawing.Color.Black;
             this.tb_SpeedFactor.Location = new System.Drawing.Point(138, 200);
             this.tb_SpeedFactor.Name = "tb_SpeedFactor";
-            this.tb_SpeedFactor.Size = new System.Drawing.Size(241, 48);
+            this.tb_SpeedFactor.Size = new System.Drawing.Size(241, 45);
             this.tb_SpeedFactor.TabIndex = 63;
             this.tb_SpeedFactor.Tag = "444";
             this.tb_SpeedFactor.Scroll += new System.EventHandler(this.tb_SpeedFactor_Scroll);
@@ -189,7 +175,7 @@
             this.tb_Width.BackColor = System.Drawing.Color.Black;
             this.tb_Width.Location = new System.Drawing.Point(621, 311);
             this.tb_Width.Name = "tb_Width";
-            this.tb_Width.Size = new System.Drawing.Size(351, 48);
+            this.tb_Width.Size = new System.Drawing.Size(351, 45);
             this.tb_Width.TabIndex = 62;
             this.tb_Width.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.tb_Width.Scroll += new System.EventHandler(this.tb_Width_Scroll);
@@ -203,7 +189,7 @@
             this.tb_Height.Maximum = 9;
             this.tb_Height.Name = "tb_Height";
             this.tb_Height.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tb_Height.Size = new System.Drawing.Size(48, 220);
+            this.tb_Height.Size = new System.Drawing.Size(45, 220);
             this.tb_Height.TabIndex = 61;
             this.tb_Height.Scroll += new System.EventHandler(this.tb_Height_Scroll);
             this.tb_Height.MouseHover += new System.EventHandler(this.tb_Height_MouseHover);
@@ -282,7 +268,7 @@
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.MaxDropDownItems = 20;
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(353, 34);
+            this.comboBox1.Size = new System.Drawing.Size(353, 33);
             this.comboBox1.TabIndex = 84;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
@@ -356,7 +342,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(680, 384);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(252, 20);
+            this.label5.Size = new System.Drawing.Size(239, 20);
             this.label5.TabIndex = 90;
             this.label5.Text = "Change the Magnifier\'s  Size";
             // 
@@ -386,7 +372,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 743);
+            this.panel2.Location = new System.Drawing.Point(0, 755);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1046, 10);
             this.panel2.TabIndex = 94;
@@ -421,12 +407,12 @@
             this.button_SaveConfiguration.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_SaveConfiguration.FlatAppearance.BorderSize = 3;
             this.button_SaveConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_SaveConfiguration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.button_SaveConfiguration.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
             this.button_SaveConfiguration.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_save_black_48dp1;
             this.button_SaveConfiguration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_SaveConfiguration.Location = new System.Drawing.Point(885, 684);
+            this.button_SaveConfiguration.Location = new System.Drawing.Point(860, 679);
             this.button_SaveConfiguration.Name = "button_SaveConfiguration";
-            this.button_SaveConfiguration.Size = new System.Drawing.Size(142, 42);
+            this.button_SaveConfiguration.Size = new System.Drawing.Size(177, 66);
             this.button_SaveConfiguration.TabIndex = 93;
             this.button_SaveConfiguration.Text = "Save";
             this.button_SaveConfiguration.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -444,24 +430,6 @@
             this.pictureBox2.TabIndex = 86;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseClick);
-            // 
-            // HideMouseButton
-            // 
-            this.HideMouseButton.BackColor = System.Drawing.Color.White;
-            this.HideMouseButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HideMouseButton.FlatAppearance.BorderSize = 3;
-            this.HideMouseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HideMouseButton.Image = global::MagnifierSoftwareV_1.Properties.Resources.cursor;
-            this.HideMouseButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HideMouseButton.Location = new System.Drawing.Point(49, 839);
-            this.HideMouseButton.Name = "HideMouseButton";
-            this.HideMouseButton.Size = new System.Drawing.Size(106, 100);
-            this.HideMouseButton.TabIndex = 81;
-            this.HideMouseButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.HideMouseButton.UseVisualStyleBackColor = false;
-            this.HideMouseButton.Click += new System.EventHandler(this.HideMouseButton_Click);
-            this.HideMouseButton.MouseLeave += new System.EventHandler(this.HideMouseButton_MouseLeave);
-            this.HideMouseButton.MouseHover += new System.EventHandler(this.HideMouseButton_MouseHover);
             // 
             // pictureBox1
             // 
@@ -607,7 +575,7 @@
             this.Sensititvity_trackBar.Maximum = 30;
             this.Sensititvity_trackBar.Minimum = 2;
             this.Sensititvity_trackBar.Name = "Sensititvity_trackBar";
-            this.Sensititvity_trackBar.Size = new System.Drawing.Size(241, 48);
+            this.Sensititvity_trackBar.Size = new System.Drawing.Size(241, 45);
             this.Sensititvity_trackBar.TabIndex = 97;
             this.Sensititvity_trackBar.Tag = "444";
             this.Sensititvity_trackBar.Value = 2;
@@ -643,12 +611,121 @@
             this.DefaultSetting_button.UseVisualStyleBackColor = false;
             this.DefaultSetting_button.Click += new System.EventHandler(this.DefaultSetting_button_Click);
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(97, 942);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(246, 30);
+            this.label2.TabIndex = 111;
+            this.label2.Text = "Fast Margin";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // trackBar_FastMargin
+            // 
+            this.trackBar_FastMargin.BackColor = System.Drawing.Color.Black;
+            this.trackBar_FastMargin.Location = new System.Drawing.Point(94, 905);
+            this.trackBar_FastMargin.Maximum = 100;
+            this.trackBar_FastMargin.Name = "trackBar_FastMargin";
+            this.trackBar_FastMargin.Size = new System.Drawing.Size(241, 45);
+            this.trackBar_FastMargin.TabIndex = 107;
+            this.trackBar_FastMargin.Tag = "444";
+            this.trackBar_FastMargin.Value = 2;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Black;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.Window;
+            this.label10.Location = new System.Drawing.Point(198, 877);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 34);
+            this.label10.TabIndex = 108;
+            this.label10.Text = "?";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Black;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.Window;
+            this.label11.Location = new System.Drawing.Point(97, 829);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(246, 30);
+            this.label11.TabIndex = 106;
+            this.label11.Text = "Slow Margin";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button__SlowMarginDown
+            // 
+            this.button__SlowMarginDown.BackColor = System.Drawing.Color.White;
+            this.button__SlowMarginDown.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button__SlowMarginDown.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_expand_more_black_48dp;
+            this.button__SlowMarginDown.Location = new System.Drawing.Point(35, 775);
+            this.button__SlowMarginDown.Name = "button__SlowMarginDown";
+            this.button__SlowMarginDown.Size = new System.Drawing.Size(49, 53);
+            this.button__SlowMarginDown.TabIndex = 105;
+            this.button__SlowMarginDown.UseVisualStyleBackColor = false;
+            // 
+            // button__SlowMarginUp
+            // 
+            this.button__SlowMarginUp.BackColor = System.Drawing.Color.White;
+            this.button__SlowMarginUp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button__SlowMarginUp.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_expand_less_black_48dp;
+            this.button__SlowMarginUp.Location = new System.Drawing.Point(341, 775);
+            this.button__SlowMarginUp.Name = "button__SlowMarginUp";
+            this.button__SlowMarginUp.Size = new System.Drawing.Size(49, 53);
+            this.button__SlowMarginUp.TabIndex = 104;
+            this.button__SlowMarginUp.UseVisualStyleBackColor = false;
+            // 
+            // trackBar_SlowMargin
+            // 
+            this.trackBar_SlowMargin.BackColor = System.Drawing.Color.Black;
+            this.trackBar_SlowMargin.Location = new System.Drawing.Point(94, 792);
+            this.trackBar_SlowMargin.Maximum = 100;
+            this.trackBar_SlowMargin.Name = "trackBar_SlowMargin";
+            this.trackBar_SlowMargin.Size = new System.Drawing.Size(241, 45);
+            this.trackBar_SlowMargin.TabIndex = 103;
+            this.trackBar_SlowMargin.Tag = "444";
+            // 
+            // button__FastMarginDown
+            // 
+            this.button__FastMarginDown.BackColor = System.Drawing.Color.White;
+            this.button__FastMarginDown.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button__FastMarginDown.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_expand_more_black_48dp;
+            this.button__FastMarginDown.Location = new System.Drawing.Point(35, 886);
+            this.button__FastMarginDown.Name = "button__FastMarginDown";
+            this.button__FastMarginDown.Size = new System.Drawing.Size(49, 53);
+            this.button__FastMarginDown.TabIndex = 113;
+            this.button__FastMarginDown.UseVisualStyleBackColor = false;
+            // 
+            // button__FastMarginUp
+            // 
+            this.button__FastMarginUp.BackColor = System.Drawing.Color.White;
+            this.button__FastMarginUp.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button__FastMarginUp.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_expand_less_black_48dp;
+            this.button__FastMarginUp.Location = new System.Drawing.Point(341, 886);
+            this.button__FastMarginUp.Name = "button__FastMarginUp";
+            this.button__FastMarginUp.Size = new System.Drawing.Size(49, 53);
+            this.button__FastMarginUp.TabIndex = 112;
+            this.button__FastMarginUp.UseVisualStyleBackColor = false;
+            // 
             // ConfigurationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1046, 753);
+            this.ClientSize = new System.Drawing.Size(1046, 765);
+            this.Controls.Add(this.button__FastMarginDown);
+            this.Controls.Add(this.button__FastMarginUp);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.trackBar_FastMargin);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.button__SlowMarginDown);
+            this.Controls.Add(this.button__SlowMarginUp);
+            this.Controls.Add(this.trackBar_SlowMargin);
             this.Controls.Add(this.DefaultSetting_button);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.SensititivityDown_button);
@@ -666,8 +743,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.HideMouseButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.traceBaarWidthButton);
             this.Controls.Add(this.traceBaarHightButton);
@@ -677,7 +752,6 @@
             this.Controls.Add(this.traceBaarZoomButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Color_Blindness_comboBox);
-            this.Controls.Add(this.cb_HideMouseCursor);
             this.Controls.Add(this.lbl_ZoomFactor);
             this.Controls.Add(this.cb_Symmetry);
             this.Controls.Add(this.tb_ZoomFactor);
@@ -700,15 +774,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sensititvity_trackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_FastMargin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_SlowMargin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button HideMouseButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button traceBaarWidthButton;
         private System.Windows.Forms.Button traceBaarHightButton;
@@ -718,7 +791,6 @@
         private System.Windows.Forms.Button traceBaarZoomButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Color_Blindness_comboBox;
-        private System.Windows.Forms.CheckBox cb_HideMouseCursor;
         private System.Windows.Forms.Label lbl_ZoomFactor;
         private System.Windows.Forms.CheckBox cb_Symmetry;
         private System.Windows.Forms.TrackBar tb_ZoomFactor;
@@ -749,5 +821,14 @@
         private System.Windows.Forms.TrackBar Sensititvity_trackBar;
         private System.Windows.Forms.Label Sensititivity_label;
         private System.Windows.Forms.Button DefaultSetting_button;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TrackBar trackBar_FastMargin;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button__SlowMarginDown;
+        private System.Windows.Forms.Button button__SlowMarginUp;
+        private System.Windows.Forms.TrackBar trackBar_SlowMargin;
+        private System.Windows.Forms.Button button__FastMarginDown;
+        private System.Windows.Forms.Button button__FastMarginUp;
     }
 }

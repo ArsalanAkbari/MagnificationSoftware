@@ -38,18 +38,13 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             leftEyeGaze = new OneEyeLeft(mConfiguration);
             headPoints = new EyeXPrecisionPointer(mConfiguration.senitivityOfHeadTracking);
 
-
-         
-
             this.form = form;
             this.form.Resize += new EventHandler(form_Resize);
             this.form.FormClosing += new FormClosingEventHandler(form_FormClosing);
 
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
-
-            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
-                timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
+            timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             initialized = NativeMethods.MagInitialize();
 
@@ -212,7 +207,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
             PointF target = Cursor.Position;
 
-            if (mOverlayEyeNewForm.getFreezeMode() == false)
+            if (mOverlayEyeNewForm.getFreezeMode() == false && !mOverlayEyeNewForm.getLastMousePosition)
             {
                 Point gazePoint = leftEyeGaze.GetWarpPoint();
                 Point warpPoint = leftEyeGaze.GetNextPoint(gazePoint);
@@ -222,11 +217,21 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
                 mOverlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
             }
 
+            else if (mOverlayEyeNewForm.getLastMousePosition)
+            {
+                POINT mousePoint = new POINT();
+                NativeMethods.GetCursorPos(ref mousePoint);
+                target = new Point(mousePoint.x, mousePoint.y);
+                mOverlayEyeNewForm.setTargetPoint(target);
+                lastTarget = new Point(mousePoint.x, mousePoint.y);
+
+            }
 
 
-                //***********************************************************************************************//
-                //RECT hostWindowRect = new RECT();
-                // NativeMethods.GetWindowRect(hwndMag, out hostWindowRect);
+
+            //***********************************************************************************************//
+            //RECT hostWindowRect = new RECT();
+            // NativeMethods.GetWindowRect(hwndMag, out hostWindowRect);
 
             int width = (int)((magWindowRect.right - magWindowRect.left) / mConfiguration.ZoomFactor);
             int height = (int)((magWindowRect.bottom - magWindowRect.top) / mConfiguration.ZoomFactor);

@@ -48,7 +48,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
 
-            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
+           // if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
                 timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             initialized = NativeMethods.MagInitialize();
@@ -203,7 +203,7 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
 
             PointF target = Cursor.Position;
 
-            if (overlayEyeNewForm.getFreezeMode() == false)
+            if (overlayEyeNewForm.getFreezeMode() == false && !overlayEyeNewForm.getLastMousePosition)
             {
                 Vector3 headPoint = headPoints.GetHeadPoint();
 
@@ -212,8 +212,17 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
                 target = calculateTargetPoint(warpPoint);
 
                 overlayEyeNewForm.setTargetPoint(target);
-
                 overlayEyeNewForm.setWhereAmIPoint(Cursor.Position);
+
+            }
+
+            else if (overlayEyeNewForm.getLastMousePosition)
+            {
+                POINT mousePoint = new POINT();
+                NativeMethods.GetCursorPos(ref mousePoint);
+                target = new Point(mousePoint.x, mousePoint.y);
+                overlayEyeNewForm.setTargetPoint(target);
+                lastTarget = new Point(mousePoint.x, mousePoint.y);
 
             }
 

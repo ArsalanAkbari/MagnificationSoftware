@@ -66,6 +66,12 @@ namespace MagnifierSoftwareV_1
         //Where I Am color
         public String whereIAmColor = Color.Red.Name;
 
+        //Tobii Calibration point color
+        public String CalibrationColor1 = Color.Red.ToString();
+        public Color CalibrationColor = Color.Red;
+        public int calibrationPointSize = 150;
+
+
 
         public int MagnifierWidth = 450;
         public int MagnifierHeight = 450;

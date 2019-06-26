@@ -45,9 +45,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
             timer = new Timer();
             timer.Tick += new EventHandler(timer_Tick);
-
-            if (overlayEyeNewForm.getScreenMode() == false)  //if window mode
-                timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
+            timer.Tick += new EventHandler(overlayEyeNewForm.HandleTimer);
 
             initialized = NativeMethods.MagInitialize();
 
@@ -205,7 +203,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
             PointF target = Cursor.Position;
 
-            if (overlayEyeNewForm.getFreezeMode() == false)
+            if (overlayEyeNewForm.getFreezeMode() == false && !overlayEyeNewForm.getLastMousePosition)
             {
                 Point gazePoint = rightEyeGaze.GetWarpPoint();
                 Point warpPointEye = rightEyeGaze.GetNextPoint(gazePoint);
@@ -216,6 +214,15 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
             }
 
+            else if (overlayEyeNewForm.getLastMousePosition)
+            {
+                POINT mousePoint = new POINT();
+                NativeMethods.GetCursorPos(ref mousePoint);
+                target = new Point(mousePoint.x, mousePoint.y);
+                overlayEyeNewForm.setTargetPoint(target);
+                lastTarget = new Point(mousePoint.x, mousePoint.y);
+
+            }
 
             //***********************************************************************************************//
             RECT hostWindowRect = new RECT();

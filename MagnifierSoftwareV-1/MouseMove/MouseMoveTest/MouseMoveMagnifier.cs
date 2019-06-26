@@ -459,6 +459,8 @@ namespace MagnifierSoftwareV_1.MouseMove.MouseMoveTest
                             BeginInvoke(new MethodInvoker(delegate
                             {
                                 NativeMethods.MagShowSystemCursor(true);
+
+                                mMainForm.TobiiCalibration_button.Enabled = true;
                                 mMainForm.FullScreenMouse_Button.Enabled = true;
                                 mMainForm.FullscreenMaginfierEye_Button.Enabled = true;
                                 mMainForm.MaginfierEye_Button.Enabled = true;

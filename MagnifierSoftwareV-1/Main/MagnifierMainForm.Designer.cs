@@ -52,6 +52,8 @@
             this.FullscreenMaginfierEye_Button = new System.Windows.Forms.Button();
             this.MaginfierEye_Button = new System.Windows.Forms.Button();
             this.MagniferUsingMouse_button = new System.Windows.Forms.Button();
+            this.TobiiCalibration_button = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -284,11 +286,31 @@
             this.MagniferUsingMouse_button.MouseLeave += new System.EventHandler(this.MagniferUsingMouse_MouseLeave);
             this.MagniferUsingMouse_button.MouseHover += new System.EventHandler(this.MagniferUsingMouse_MouseHover);
             // 
+            // TobiiCalibration_button
+            // 
+            this.TobiiCalibration_button.BackColor = System.Drawing.Color.White;
+            this.TobiiCalibration_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.TobiiCalibration_button.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.TobiiCalibration_button, "TobiiCalibration_button");
+            this.TobiiCalibration_button.ForeColor = System.Drawing.Color.Black;
+            this.TobiiCalibration_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.calibration_mark1;
+            this.TobiiCalibration_button.Name = "TobiiCalibration_button";
+            this.TobiiCalibration_button.UseVisualStyleBackColor = false;
+            this.TobiiCalibration_button.Click += new System.EventHandler(this.Button1_Click_2);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Name = "label7";
+            // 
             // MagnifierMainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TobiiCalibration_button);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -339,6 +361,8 @@
         public System.Windows.Forms.Button FullScreenMouse_Button;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Button Evaluation_button;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Button TobiiCalibration_button;
     }
 }
 

@@ -30,7 +30,11 @@ namespace MagnifierSoftwareV_1.EyeMove
         private bool IsRightEye = false;
         private bool IsJustHeadAndHead = false;
         private bool IsNormal; // window is normal
-        private bool wAIOn;
+        public bool wAIOn;
+
+        public bool getLastMousePosition = false; // use to get the last point of curser during calling WhereIam point
+        public PointF lastMousePosition;
+
 
         private PointF mTargetPoint;
         private PointF mCurrentPoint;
@@ -41,6 +45,8 @@ namespace MagnifierSoftwareV_1.EyeMove
         private Point whereAmIPoint; // through using f2 button
         private float temp = 0;
         private string tempString;
+
+        int count = 0;
 
         public void setTargetPoint(PointF value)
         {
@@ -117,6 +123,7 @@ namespace MagnifierSoftwareV_1.EyeMove
 
 
             IsNormal = false; // window is normal
+            wAIOn = false;
 
             checkForKeys = true;
             CheckForKeysJob();
@@ -236,7 +243,7 @@ namespace MagnifierSoftwareV_1.EyeMove
         public void HandleTimer(object sender, EventArgs e)
         {
             showWhereIam();
-            if (freeze == false)
+            if (freeze == false && fullScreen == false)
             {
                 Width = mConfiguration.MagnifierWidth;
                 Height = mConfiguration.MagnifierHeight;
@@ -287,15 +294,15 @@ namespace MagnifierSoftwareV_1.EyeMove
                 else if (mConfiguration.HideMouseCursor == false)
                     NativeMethods.MagShowSystemCursor(true);
 
-             
-                // wWhereAmIPoint = new Point((int)mTargetPoint.X, (int)mTargetPoint.Y);
+              
             }
-
-
+            count++;
+            if (count == 10)//It use for WherIam point
+                getLastMousePosition = false;
         }
 
         //##########################################
-       
+
 
         [DllImport("user32.dll")]
         private static extern short GetAsyncKeyState(Keys vKey);
@@ -330,8 +337,8 @@ namespace MagnifierSoftwareV_1.EyeMove
             {
                 WhereAmI wAI = new WhereAmI(mConfiguration.whereIamPointFollowsEyes , mConfiguration);
                 wAI.Show();
-
             }
+
         }
 
 
@@ -436,11 +443,11 @@ namespace MagnifierSoftwareV_1.EyeMove
                                
                                 BeginInvoke(new MethodInvoker(delegate
                                 {
-
+                                  
                                     // WhereAmI wAI = new WhereAmI(wWhereAmIPoint, mConfiguration);
 
                                     //wAI.Show();
-                                    
+
 
                                     temp = mConfiguration.ZoomFactor;
                                     mConfiguration.ZoomFactor = 1;
@@ -511,15 +518,17 @@ namespace MagnifierSoftwareV_1.EyeMove
                                 }));
                                 Thread.Sleep(500);
                                 wAIOn = true;
+                                count = 0;
+                                getLastMousePosition = true;
 
                             }
                             else if (wAIOn == true)
                             {
-                                wAIOn = false;
 
+                                wAIOn = false;
+                               
                                 BeginInvoke(new MethodInvoker(delegate
                                 {
-
                                     List<Form> forms = new List<Form>();
 
                                     foreach (Form f in Application.OpenForms)
@@ -534,6 +543,7 @@ namespace MagnifierSoftwareV_1.EyeMove
                                     }
 
                                     mConfiguration.normal = false;
+
                                         mConfiguration.ZoomFactor = temp;
 
                                         if (tempString == "invertColors")
@@ -597,6 +607,7 @@ namespace MagnifierSoftwareV_1.EyeMove
                                 }));
 
                                 Thread.Sleep(500);
+
 
                             }
                         }
@@ -776,6 +787,7 @@ namespace MagnifierSoftwareV_1.EyeMove
 
                                 //mgBothEye.close = true;
 
+                                mMainForm.TobiiCalibration_button.Enabled = true;
                                 mMainForm.MagniferUsingMouse_button.Enabled = true;
                                 mMainForm.FullscreenMaginfierEye_Button.Enabled = true;
                                 mMainForm.MaginfierEye_Button.Enabled = true;
@@ -817,6 +829,7 @@ namespace MagnifierSoftwareV_1.EyeMove
 
             checkForKeys = false;
 
+            mMainForm.TobiiCalibration_button.Enabled = true;
             mMainForm.MagniferUsingMouse_button.Enabled = true;
             mMainForm.FullscreenMaginfierEye_Button.Enabled = true;
             mMainForm.MaginfierEye_Button.Enabled = true;

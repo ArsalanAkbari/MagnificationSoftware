@@ -170,7 +170,7 @@
     <value>0, -6</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 49</value>
+    <value>772, 56</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
@@ -186,19 +186,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 17pt, style=Bold</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 20</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 20</value>
+    <value>502, 29</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -219,7 +219,7 @@
     <value>0</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
+    <value>3, 11</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 38</value>
@@ -253,7 +253,7 @@
     <value>NoControl</value>
   </data>
   <data name="Exit_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 6</value>
+    <value>719, 10</value>
   </data>
   <data name="Exit_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -289,7 +289,7 @@
     <value>NoControl</value>
   </data>
   <data name="MiniMize_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 6</value>
+    <value>681, 10</value>
   </data>
   <data name="MiniMize_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -316,13 +316,13 @@
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 50</value>
+    <value>35, 77</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 20</value>
+    <value>146, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -346,13 +346,13 @@
     <value>True</value>
   </data>
   <data name="label_ZoomFaktor.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label_ZoomFaktor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 20</value>
+    <value>89, 30</value>
   </data>
   <data name="label_ZoomFaktor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 20</value>
+    <value>18, 26</value>
   </data>
   <data name="label_ZoomFaktor.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -375,6 +375,51 @@
   <data name="&gt;&gt;label_ZoomFaktor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;ZoomIn_button.Name" xml:space="preserve">
+    <value>ZoomIn_button</value>
+  </data>
+  <data name="&gt;&gt;ZoomIn_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ZoomIn_button.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ZoomIn_button.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ZoomOutbutton.Name" xml:space="preserve">
+    <value>ZoomOutbutton</value>
+  </data>
+  <data name="&gt;&gt;ZoomOutbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ZoomOutbutton.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;ZoomOutbutton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 48</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 107</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
   <data name="ZoomIn_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -388,13 +433,13 @@
     <value>NoControl</value>
   </data>
   <data name="ZoomIn_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 10</value>
+    <value>132, 10</value>
   </data>
   <data name="ZoomIn_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ZoomIn_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 40</value>
+    <value>63, 56</value>
   </data>
   <data name="ZoomIn_button.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -436,7 +481,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ZoomOutbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 40</value>
+    <value>63, 56</value>
   </data>
   <data name="ZoomOutbutton.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -459,38 +504,17 @@
   <data name="&gt;&gt;ZoomOutbutton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 40</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 76</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 243</value>
+    <value>37, 326</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 40</value>
+    <value>133, 52</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -512,19 +536,19 @@ Glass</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 243</value>
+    <value>177, 326</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 40</value>
+    <value>133, 52</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
@@ -546,19 +570,19 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 243</value>
+    <value>338, 326</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 40</value>
+    <value>91, 52</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -580,19 +604,19 @@ Tracker</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 243</value>
+    <value>464, 326</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 40</value>
+    <value>126, 52</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
@@ -614,16 +638,16 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 295</value>
+    <value>0, 402</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 10</value>
+    <value>763, 10</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -638,13 +662,13 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="HelpToturial_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="HelpToturial_button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="HelpToturial_button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -653,13 +677,13 @@ FullScreen</value>
     <value>NoControl</value>
   </data>
   <data name="HelpToturial_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>451, 42</value>
+    <value>648, 50</value>
   </data>
   <data name="HelpToturial_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="HelpToturial_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 74</value>
+    <value>115, 105</value>
   </data>
   <data name="HelpToturial_button.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -680,13 +704,13 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;HelpToturial_button.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="MouseHidenMainForm_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="MouseHidenMainForm_button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="MouseHidenMainForm_button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -695,13 +719,13 @@ FullScreen</value>
     <value>NoControl</value>
   </data>
   <data name="MouseHidenMainForm_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 42</value>
+    <value>211, 50</value>
   </data>
   <data name="MouseHidenMainForm_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="MouseHidenMainForm_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 74</value>
+    <value>154, 105</value>
   </data>
   <data name="MouseHidenMainForm_button.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -722,13 +746,13 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MouseHidenMainForm_button.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="Setup_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="Setup_button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="Setup_button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -737,13 +761,13 @@ FullScreen</value>
     <value>NoControl</value>
   </data>
   <data name="Setup_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 41</value>
+    <value>367, 50</value>
   </data>
   <data name="Setup_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="Setup_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 75</value>
+    <value>135, 105</value>
   </data>
   <data name="Setup_button.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -764,13 +788,13 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Setup_button.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="Evaluation_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="Evaluation_button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
   </data>
   <data name="Evaluation_button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -779,13 +803,13 @@ FullScreen</value>
     <value>NoControl</value>
   </data>
   <data name="Evaluation_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 42</value>
+    <value>504, 50</value>
   </data>
   <data name="Evaluation_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="Evaluation_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 74</value>
+    <value>142, 105</value>
   </data>
   <data name="Evaluation_button.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -806,7 +830,7 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Evaluation_button.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="FullScreenMouse_Button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -846,17 +870,14 @@ FullScreen</value>
         vHr1ytUP/jEyBK8ht4lVA0LB81IM28NIMkkhBsQihZgBih81QBSiv5iqOIb+azk2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="FullScreenMouse_Button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="FullScreenMouse_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="FullScreenMouse_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 128</value>
+    <value>456, 176</value>
   </data>
   <data name="FullScreenMouse_Button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 109</value>
+    <value>134, 133</value>
   </data>
   <data name="FullScreenMouse_Button.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -874,7 +895,7 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;FullScreenMouse_Button.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="FullscreenMaginfierEye_Button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -882,17 +903,14 @@ FullScreen</value>
   <data name="FullscreenMaginfierEye_Button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 11pt, style=Bold</value>
   </data>
-  <data name="FullscreenMaginfierEye_Button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="FullscreenMaginfierEye_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="FullscreenMaginfierEye_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 128</value>
+    <value>176, 176</value>
   </data>
   <data name="FullscreenMaginfierEye_Button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 109</value>
+    <value>134, 133</value>
   </data>
   <data name="FullscreenMaginfierEye_Button.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -910,7 +928,7 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;FullscreenMaginfierEye_Button.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="MaginfierEye_Button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -918,17 +936,14 @@ FullScreen</value>
   <data name="MaginfierEye_Button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 11pt, style=Bold</value>
   </data>
-  <data name="MaginfierEye_Button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="MaginfierEye_Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="MaginfierEye_Button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 128</value>
+    <value>36, 176</value>
   </data>
   <data name="MaginfierEye_Button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 109</value>
+    <value>134, 133</value>
   </data>
   <data name="MaginfierEye_Button.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -949,7 +964,7 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MaginfierEye_Button.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="MagniferUsingMouse_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -957,17 +972,14 @@ FullScreen</value>
   <data name="MagniferUsingMouse_button.Font" type="System.Drawing.Font, System.Drawing">
     <value>Georgia, 11pt, style=Bold</value>
   </data>
-  <data name="MagniferUsingMouse_button.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="MagniferUsingMouse_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="MagniferUsingMouse_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 128</value>
+    <value>316, 176</value>
   </data>
   <data name="MagniferUsingMouse_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 109</value>
+    <value>134, 133</value>
   </data>
   <data name="MagniferUsingMouse_button.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -985,7 +997,80 @@ FullScreen</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MagniferUsingMouse_button.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
+  </data>
+  <data name="TobiiCalibration_button.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="TobiiCalibration_button.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="TobiiCalibration_button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="TobiiCalibration_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 176</value>
+  </data>
+  <data name="TobiiCalibration_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="TobiiCalibration_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 133</value>
+  </data>
+  <data name="TobiiCalibration_button.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="TobiiCalibration_button.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;TobiiCalibration_button.Name" xml:space="preserve">
+    <value>TobiiCalibration_button</value>
+  </data>
+  <data name="&gt;&gt;TobiiCalibration_button.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TobiiCalibration_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TobiiCalibration_button.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 16pt, style=Bold</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>604, 326</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 52</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Tobii 
+Colibration</value>
+  </data>
+  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -994,7 +1079,7 @@ FullScreen</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>538, 305</value>
+    <value>763, 412</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>WindowsDefaultBounds</value>

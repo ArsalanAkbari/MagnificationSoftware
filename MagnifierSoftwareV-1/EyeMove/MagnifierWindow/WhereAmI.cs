@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using MagnifierSoftwareV_1.MouseMove.MouseMoveTest;
 
 namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 {
@@ -10,6 +11,9 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
         private Configuration mConfiguration;
         private bool mfollowEyes = false;
         private combineEyes combineEyes;
+        OverlayEyeNew mOverlayNewForm;
+        
+
 
         public WhereAmI(bool followEyes, Configuration configuration)
         {
@@ -18,15 +22,13 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
             FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
             mfollowEyes = followEyes;
+            mfollowEyes = false;
             mConfiguration = configuration;
             KeyDown += new KeyEventHandler(HandleEsc);
 
             combineEyes = new combineEyes(mConfiguration);
 
         }
-
-     
-
 
         /*
          * if the users result by calibration is more than 80% in each of eyes, we can use followEyes option, in other 
@@ -73,6 +75,8 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
                 e.Graphics.FillEllipse(new SolidBrush(Color.Yellow), rec);
                 e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+                
                 this.Invalidate();
 
 
@@ -98,8 +102,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
 
 
                 int x = warpPoint.X;
-                int y = warpPoint.Y
-                    ;
+                int y = warpPoint.Y;
                 rec = new Rectangle(x - 100, y - 100, 200, 200);
                 e.Graphics.FillEllipse(newBrush, rec);
                 e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
@@ -109,6 +112,7 @@ namespace MagnifierSoftwareV_1.EyeMove.MagnifierWindow
                 e.Graphics.FillEllipse(new SolidBrush(Color.Yellow), rec);
                 e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
                 this.Invalidate();
             }
         }
