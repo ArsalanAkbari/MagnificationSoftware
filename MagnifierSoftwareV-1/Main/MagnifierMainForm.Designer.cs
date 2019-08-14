@@ -290,7 +290,7 @@
             this.ZoomIn_button.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.ZoomIn_button, "ZoomIn_button");
             this.ZoomIn_button.ForeColor = System.Drawing.Color.Black;
-            this.ZoomIn_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.zooming_magnifying_glass;
+            this.ZoomIn_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.zoom_in;
             this.ZoomIn_button.Name = "ZoomIn_button";
             this.ZoomIn_button.UseVisualStyleBackColor = false;
             this.ZoomIn_button.Click += new System.EventHandler(this.ZoomIn_button_Click);
@@ -302,7 +302,7 @@
             this.ZoomOutbutton.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.ZoomOutbutton, "ZoomOutbutton");
             this.ZoomOutbutton.ForeColor = System.Drawing.Color.White;
-            this.ZoomOutbutton.Image = global::MagnifierSoftwareV_1.Properties.Resources.zoom_out;
+            this.ZoomOutbutton.Image = global::MagnifierSoftwareV_1.Properties.Resources.zoom_out1;
             this.ZoomOutbutton.Name = "ZoomOutbutton";
             this.ZoomOutbutton.UseVisualStyleBackColor = false;
             this.ZoomOutbutton.Click += new System.EventHandler(this.ZoomOutbutton_Click);

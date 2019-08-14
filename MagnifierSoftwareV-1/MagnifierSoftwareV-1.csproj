@@ -526,6 +526,18 @@
   <ItemGroup>
     <None Include="Resources\icons8-klassenzimmer-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rauszoomen-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom-out1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets" Condition="Exists('..\packages\Tobii.Research.x86.1.6.1.987\build\Tobii.Research.x86.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

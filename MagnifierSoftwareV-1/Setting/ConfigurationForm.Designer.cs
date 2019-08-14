@@ -294,7 +294,7 @@
             this.Setting.Name = "Setting";
             this.Setting.Size = new System.Drawing.Size(246, 30);
             this.Setting.TabIndex = 93;
-            this.Setting.Text = "Setting";
+            this.Setting.Text = "Settings";
             this.Setting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Setting_MouseDown);
             // 
             // Close_button
