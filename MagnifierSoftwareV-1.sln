@@ -5,10 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagnifierSoftwareV-1", "MagnifierSoftwareV-1\MagnifierSoftwareV-1.csproj", "{5F12C67D-D1EC-440E-84D2-C30E142EEF52}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{5D5FB693-FFB3-4468-B8BB-99217C24D4DD}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{5DF4FAC0-D5EC-49E1-A72B-B1B543C43586}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,10 +15,6 @@ Global
 		{5F12C67D-D1EC-440E-84D2-C30E142EEF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F12C67D-D1EC-440E-84D2-C30E142EEF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F12C67D-D1EC-440E-84D2-C30E142EEF52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D5FB693-FFB3-4468-B8BB-99217C24D4DD}.Debug|Any CPU.ActiveCfg = Debug
-		{5D5FB693-FFB3-4468-B8BB-99217C24D4DD}.Release|Any CPU.ActiveCfg = Release
-		{5DF4FAC0-D5EC-49E1-A72B-B1B543C43586}.Debug|Any CPU.ActiveCfg = Debug
-		{5DF4FAC0-D5EC-49E1-A72B-B1B543C43586}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

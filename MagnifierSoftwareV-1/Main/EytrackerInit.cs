@@ -18,7 +18,8 @@ namespace MagnifierSoftwareV_1
         {
             var eyeTracker = EyeTrackingOperations.FindAllEyeTrackers().FirstOrDefault();
             getEyetrackerInformation();
-            ApplyLicense(eyeTracker, "C:\\Users\\......Path to license file.....");
+            ApplyLicense(eyeTracker, "C:\\Users\\Eyetracker\\OneDrive\\Eye tracking\\Magnifier Projects\\Experimentssss\\MagnifierLast\\MagnifierLast\\license\\license_key_00454713__-__Karlsruhe_Institute_of_IS404-100108245121");
+            //ApplyLicense(eyeTracker, "C:\\Users\\......Path to license file.....");
            
         }
 
