@@ -96,9 +96,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(138, 527);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(305, 30);
+            this.label1.Size = new System.Drawing.Size(241, 30);
             this.label1.TabIndex = 72;
-            this.label1.Text = "Select Color Blindness (CB) filter";
+            this.label1.Text = "Select Color Blindness (CB)";
             // 
             // Color_Blindness_comboBox
             // 
@@ -116,7 +116,7 @@
             "Protanomaly---------Red Green CB",
             "Protanopia-----------Red Green CB",
             "Tritanomaly----------Blue Yellow  CB",
-            "Tritanopia------------Blue Yellow CB"});
+            "Tritanopia------------Blue Yellown CB"});
             this.Color_Blindness_comboBox.Location = new System.Drawing.Point(142, 556);
             this.Color_Blindness_comboBox.Margin = new System.Windows.Forms.Padding(2);
             this.Color_Blindness_comboBox.MaxDropDownItems = 20;
@@ -247,7 +247,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(291, 30);
             this.label4.TabIndex = 85;
-            this.label4.Text = "Select the eye tracking mode";
+            this.label4.Text = "Select The Eyetracking Mode";
             // 
             // comboBox1
             // 
@@ -257,13 +257,13 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
             this.comboBox1.Items.AddRange(new object[] {
-            "Both eyes + head",
-            "Both eyes",
-            "Left eye + head",
-            "Left eye",
-            "Right eye + head",
-            "Right eye",
-            "Just head"});
+            "Both Eye + Head",
+            "Both Eye",
+            "Left Eye + Head",
+            "Left Eye",
+            "Right Eye + Head",
+            "Right Eye",
+            "Just Head"});
             this.comboBox1.Location = new System.Drawing.Point(142, 445);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.MaxDropDownItems = 20;
@@ -303,7 +303,7 @@
             this.Close_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.Close_button.FlatAppearance.BorderSize = 3;
             this.Close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Close_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.68F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Close_button.Font = new System.Drawing.Font("Bodoni MT Condensed", 13.68F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Close_button.ForeColor = System.Drawing.Color.Transparent;
             this.Close_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.delete1;
             this.Close_button.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -322,7 +322,7 @@
             this.MiniMize_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.MiniMize_button.FlatAppearance.BorderSize = 3;
             this.MiniMize_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MiniMize_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.68F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MiniMize_button.Font = new System.Drawing.Font("Bodoni MT Condensed", 13.68F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MiniMize_button.ForeColor = System.Drawing.Color.Transparent;
             this.MiniMize_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.minimize;
             this.MiniMize_button.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -338,13 +338,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(696, 382);
+            this.label5.Location = new System.Drawing.Point(680, 384);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(237, 26);
+            this.label5.Size = new System.Drawing.Size(239, 20);
             this.label5.TabIndex = 90;
-            this.label5.Text = "Change window  size";
+            this.label5.Text = "Change the Magnifier\'s  Size";
             // 
             // label6
             // 
@@ -355,7 +355,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(246, 30);
             this.label6.TabIndex = 91;
-            this.label6.Text = "Speed of magnifier window";
+            this.label6.Text = "Speed of Magnifier Window";
             // 
             // label7
             // 
@@ -366,7 +366,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(246, 30);
             this.label7.TabIndex = 92;
-            this.label7.Text = "Zoomfactor";
+            this.label7.Text = "Zoom Faktor";
             // 
             // panel2
             // 
@@ -386,7 +386,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(368, 30);
             this.label8.TabIndex = 96;
-            this.label8.Text = "Change the color of \"Where I Am\" point";
+            this.label8.Text = "Change the Color of \"Where I Am\" point";
             // 
             // ChangeWIMcolor_button
             // 
@@ -410,7 +410,7 @@
             this.button_SaveConfiguration.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold);
             this.button_SaveConfiguration.Image = global::MagnifierSoftwareV_1.Properties.Resources.ic_save_black_48dp1;
             this.button_SaveConfiguration.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_SaveConfiguration.Location = new System.Drawing.Point(860, 677);
+            this.button_SaveConfiguration.Location = new System.Drawing.Point(860, 679);
             this.button_SaveConfiguration.Name = "button_SaveConfiguration";
             this.button_SaveConfiguration.Size = new System.Drawing.Size(177, 66);
             this.button_SaveConfiguration.TabIndex = 93;
@@ -542,7 +542,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(246, 30);
             this.label9.TabIndex = 101;
-            this.label9.Text = "Sensitivity of head tracking";
+            this.label9.Text = "Sensitivity of Head Tracking";
             // 
             // SensititivityDown_button
             // 
@@ -598,15 +598,15 @@
             this.DefaultSetting_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.DefaultSetting_button.FlatAppearance.BorderSize = 3;
             this.DefaultSetting_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DefaultSetting_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.DefaultSetting_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.DefaultSetting_button.ForeColor = System.Drawing.Color.Black;
             this.DefaultSetting_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.settings;
             this.DefaultSetting_button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DefaultSetting_button.Location = new System.Drawing.Point(683, 541);
+            this.DefaultSetting_button.Location = new System.Drawing.Point(683, 556);
             this.DefaultSetting_button.Name = "DefaultSetting_button";
             this.DefaultSetting_button.Size = new System.Drawing.Size(273, 65);
             this.DefaultSetting_button.TabIndex = 102;
-            this.DefaultSetting_button.Text = "Default Settings";
+            this.DefaultSetting_button.Text = "Change To Default Setting";
             this.DefaultSetting_button.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DefaultSetting_button.UseVisualStyleBackColor = false;
             this.DefaultSetting_button.Click += new System.EventHandler(this.DefaultSetting_button_Click);

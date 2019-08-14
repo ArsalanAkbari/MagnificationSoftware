@@ -120,6 +120,7 @@ namespace MagnifierSoftwareV_1.Calibration
 
         private void StartCalibration_button_Click(object sender, EventArgs e)
         {
+            //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
             var eyeTracker = EyeTrackingOperations.FindAllEyeTrackers().FirstOrDefault();
             // EyeTrackerCollection eyeTrackers = EyeTrackingOperations.FindAllEyeTrackers();
 
@@ -157,6 +158,15 @@ namespace MagnifierSoftwareV_1.Calibration
                    
                 }
 
+            }
+
+            else
+            {
+                DialogResult result = MessageBox.Show("Please connect the Eye tracker, then try again!",
+                 "Critical Warning",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error,
+                      MessageBoxDefaultButton.Button2);
             }
         }
 

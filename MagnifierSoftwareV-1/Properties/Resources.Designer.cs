@@ -233,6 +233,16 @@ namespace MagnifierSoftwareV_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ffff {
+            get {
+                object obj = ResourceManager.GetObject("ffff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder__1_ {
             get {
                 object obj = ResourceManager.GetObject("folder (1)", resourceCulture);
@@ -433,6 +443,36 @@ namespace MagnifierSoftwareV_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_einstellungen_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-einstellungen-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_klassenzimmer_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-klassenzimmer-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mauszeiger_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mauszeiger-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Line {
             get {
                 object obj = ResourceManager.GetObject("Line", resourceCulture);
@@ -556,6 +596,16 @@ namespace MagnifierSoftwareV_1.Properties {
         internal static System.Drawing.Bitmap rectangleIcon {
             get {
                 object obj = ResourceManager.GetObject("rectangleIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rrrr {
+            get {
+                object obj = ResourceManager.GetObject("rrrr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

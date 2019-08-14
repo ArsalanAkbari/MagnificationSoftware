@@ -57,9 +57,9 @@
             this.userName_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.userName_label.Location = new System.Drawing.Point(5, 54);
             this.userName_label.Name = "userName_label";
-            this.userName_label.Size = new System.Drawing.Size(146, 20);
+            this.userName_label.Size = new System.Drawing.Size(152, 20);
             this.userName_label.TabIndex = 7;
-            this.userName_label.Text = "Enter your name:";
+            this.userName_label.Text = "Enter Your Name:";
             // 
             // userName_textBox
             // 
@@ -139,7 +139,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(222, 30);
             this.label6.TabIndex = 96;
-            this.label6.Text = "Size of the ball ";
+            this.label6.Text = "Size of the Ball / Squre";
             // 
             // tb_SensitivityFactor
             // 
@@ -186,9 +186,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(409, 50);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(491, 25);
+            this.label3.Size = new System.Drawing.Size(500, 25);
             this.label3.TabIndex = 98;
-            this.label3.Text = "Please read the information before doing the test !";
+            this.label3.Text = "Please read the Information before doing the Test !";
             // 
             // panel2
             // 
@@ -209,7 +209,7 @@
             this.button_OpenTestFolder.Name = "button_OpenTestFolder";
             this.button_OpenTestFolder.Size = new System.Drawing.Size(271, 43);
             this.button_OpenTestFolder.TabIndex = 99;
-            this.button_OpenTestFolder.Text = "Open test results  folder";
+            this.button_OpenTestFolder.Text = "Open Test Results  Folder";
             this.button_OpenTestFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_OpenTestFolder.UseVisualStyleBackColor = false;
             this.button_OpenTestFolder.Click += new System.EventHandler(this.button_OpenTestFolder_Click);
@@ -251,7 +251,7 @@
             this.startTestButton.Name = "startTestButton";
             this.startTestButton.Size = new System.Drawing.Size(271, 43);
             this.startTestButton.TabIndex = 5;
-            this.startTestButton.Text = "Start the test";
+            this.startTestButton.Text = "Start The Test";
             this.startTestButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.startTestButton.UseVisualStyleBackColor = false;
             this.startTestButton.Click += new System.EventHandler(this.startTestButton_Click);

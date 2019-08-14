@@ -43,7 +43,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(976, 727);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Test will be start after 3 seconds !";
+            this.label1.Text = "Test will be Start after 3 seconds !";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.UseWaitCursor = true;
             // 

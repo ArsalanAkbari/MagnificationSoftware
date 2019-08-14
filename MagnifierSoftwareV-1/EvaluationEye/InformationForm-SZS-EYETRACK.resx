@@ -118,9 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>- This is the tobii calibration process. During the calibration, please focus on the Point until it disappears.
+    <value>- Please first enter your Name and Chose the Eye-Tracking mode.
 
-- Before starting the calibration, please choose the calibration Mode (Right/Left/Both eyes). 
+- During the Test You should follow the Center of Red ball (as you see in left side of the screen) with your eyes
+
+- Overall you have 6 diffrent Tests.
+
+- Between each of the tests you have 3 seconds time.
+
+- After these 6 test, as the result of your Test , the chart with true and False gaze point will be showing.
+
+- You can also adjust the accuracy of the Chart (Size of the Ball).  
+   please Attention that:
+                 # The sensitivity of the Test is related to size of the ball (40 is default).
+
+- At the end Of the Test, all of the Test results will be saved in "Eyetracking-Test-Results" folder on your desktop.
+                 
+- After you click on the Play button, the Test will be starting.
+
 </value>
   </data>
 </root>

@@ -38,7 +38,10 @@ namespace MagnifierSoftwareV_1
 
         public MagnifierMainForm()
         {
+
             InitializeComponent();
+
+            //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
 
             this.Cursor = NativeMethods.LoadCustomCursor();
             
@@ -48,13 +51,13 @@ namespace MagnifierSoftwareV_1
 
             if (mConfiguration.HideMouseCursor == false)
             {
-                MouseHidenMainForm_button.Image = Properties.Resources.cursor2;
-                MouseHidenMainForm_button.Text = "Cursor Hide";
+                MouseHidenMainForm_button.Image = Properties.Resources.icons8_mauszeiger_50;
+                MouseHidenMainForm_button.Text = "Cursor hide";
             }
             else
             {
-                MouseHidenMainForm_button.Image = Properties.Resources.cursor__1_;
-                MouseHidenMainForm_button.Text = "Cursor Show";
+                MouseHidenMainForm_button.Image = Properties.Resources.rrrr;
+                MouseHidenMainForm_button.Text = "Cursor show";
             }
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(HandleEsc);
@@ -317,9 +320,20 @@ namespace MagnifierSoftwareV_1
 
         }
 
+        private void TobiiCalibration_button_MouseHover(object sender, EventArgs e)
+        {
+            toolTip_Calibration.SetToolTip(this.TobiiCalibration_button, "Tobii Calibration");
+            TobiiCalibration_button.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+        }
 
-      
-       
+        private void TobiiCalibration_button_MouseLeave(object sender, EventArgs e)
+        {
+            TobiiCalibration_button.FlatAppearance.BorderColor = Color.Black;
+        }
+
+
+
+
 
         private void MiniMize_button_Click(object sender, EventArgs e)
         {
@@ -344,14 +358,16 @@ namespace MagnifierSoftwareV_1
             if (mConfiguration.HideMouseCursor == false)
             {
                 mConfiguration.HideMouseCursor = true;
-                MouseHidenMainForm_button.Image = Properties.Resources.cursor__1_;
-                MouseHidenMainForm_button.Text = "Cursor Show";
+                //MouseHidenMainForm_button.Image = Properties.Resources.cursor__1_;
+                MouseHidenMainForm_button.Image = Properties.Resources.rrrr;
+                MouseHidenMainForm_button.Text = "Cursor show";
             }
             else if (mConfiguration.HideMouseCursor == true)
             {
                 mConfiguration.HideMouseCursor = false;
-                MouseHidenMainForm_button.Image = Properties.Resources.cursor2;
-                MouseHidenMainForm_button.Text = "Cursor Hide";
+                //MouseHidenMainForm_button.Image = Properties.Resources.cursor2;
+                MouseHidenMainForm_button.Image = Properties.Resources.icons8_mauszeiger_50;
+                MouseHidenMainForm_button.Text = "Cursor hide";
             }
         }
 

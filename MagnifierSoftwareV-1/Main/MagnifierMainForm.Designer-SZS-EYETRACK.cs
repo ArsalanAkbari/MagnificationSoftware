@@ -31,16 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MagnifierMainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Exit_button = new System.Windows.Forms.Button();
+            this.MiniMize_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label_ZoomFaktor = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ZoomIn_button = new System.Windows.Forms.Button();
+            this.ZoomOutbutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TobiiCalibration_button = new System.Windows.Forms.Button();
             this.HelpToturial_button = new System.Windows.Forms.Button();
             this.MouseHidenMainForm_button = new System.Windows.Forms.Button();
             this.Setup_button = new System.Windows.Forms.Button();
@@ -49,14 +52,11 @@
             this.FullscreenMaginfierEye_Button = new System.Windows.Forms.Button();
             this.MaginfierEye_Button = new System.Windows.Forms.Button();
             this.MagniferUsingMouse_button = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Exit_button = new System.Windows.Forms.Button();
-            this.MiniMize_button = new System.Windows.Forms.Button();
-            this.ZoomIn_button = new System.Windows.Forms.Button();
-            this.ZoomOutbutton = new System.Windows.Forms.Button();
+            this.TobiiCalibration_button = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +76,37 @@
             this.label6.Name = "label6";
             this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label6_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MagnifierSoftwareV_1.Properties.Resources.Eyetracker1;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // Exit_button
+            // 
+            this.Exit_button.BackColor = System.Drawing.Color.White;
+            this.Exit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.Exit_button.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.Exit_button, "Exit_button");
+            this.Exit_button.ForeColor = System.Drawing.Color.Transparent;
+            this.Exit_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.delete1;
+            this.Exit_button.Name = "Exit_button";
+            this.Exit_button.UseVisualStyleBackColor = false;
+            this.Exit_button.Click += new System.EventHandler(this.Exit_button_Click);
+            // 
+            // MiniMize_button
+            // 
+            this.MiniMize_button.BackColor = System.Drawing.Color.White;
+            this.MiniMize_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.MiniMize_button.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.MiniMize_button, "MiniMize_button");
+            this.MiniMize_button.ForeColor = System.Drawing.Color.Transparent;
+            this.MiniMize_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.minimize;
+            this.MiniMize_button.Name = "MiniMize_button";
+            this.MiniMize_button.UseVisualStyleBackColor = false;
+            this.MiniMize_button.Click += new System.EventHandler(this.MiniMize_button_Click);
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -86,7 +117,6 @@
             // 
             resources.ApplyResources(this.label_ZoomFaktor, "label_ZoomFaktor");
             this.label_ZoomFaktor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.label_ZoomFaktor.ForeColor = System.Drawing.Color.White;
             this.label_ZoomFaktor.Name = "label_ZoomFaktor";
             // 
             // panel2
@@ -98,6 +128,30 @@
             this.panel2.Controls.Add(this.ZoomOutbutton);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
+            // 
+            // ZoomIn_button
+            // 
+            this.ZoomIn_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.ZoomIn_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ZoomIn_button.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.ZoomIn_button, "ZoomIn_button");
+            this.ZoomIn_button.ForeColor = System.Drawing.Color.Black;
+            this.ZoomIn_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.zooming_magnifying_glass;
+            this.ZoomIn_button.Name = "ZoomIn_button";
+            this.ZoomIn_button.UseVisualStyleBackColor = false;
+            this.ZoomIn_button.Click += new System.EventHandler(this.ZoomIn_button_Click);
+            // 
+            // ZoomOutbutton
+            // 
+            this.ZoomOutbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.ZoomOutbutton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ZoomOutbutton.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.ZoomOutbutton, "ZoomOutbutton");
+            this.ZoomOutbutton.ForeColor = System.Drawing.Color.Black;
+            this.ZoomOutbutton.Image = global::MagnifierSoftwareV_1.Properties.Resources.zoom_out;
+            this.ZoomOutbutton.Name = "ZoomOutbutton";
+            this.ZoomOutbutton.UseVisualStyleBackColor = false;
+            this.ZoomOutbutton.Click += new System.EventHandler(this.ZoomOutbutton_Click);
             // 
             // label2
             // 
@@ -129,26 +183,6 @@
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
             // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Name = "label7";
-            // 
-            // TobiiCalibration_button
-            // 
-            this.TobiiCalibration_button.BackColor = System.Drawing.Color.White;
-            this.TobiiCalibration_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.TobiiCalibration_button.FlatAppearance.BorderSize = 3;
-            resources.ApplyResources(this.TobiiCalibration_button, "TobiiCalibration_button");
-            this.TobiiCalibration_button.ForeColor = System.Drawing.Color.Black;
-            this.TobiiCalibration_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.calibration_mark1;
-            this.TobiiCalibration_button.Name = "TobiiCalibration_button";
-            this.TobiiCalibration_button.UseVisualStyleBackColor = false;
-            this.TobiiCalibration_button.Click += new System.EventHandler(this.Button1_Click_2);
-            this.TobiiCalibration_button.MouseLeave += new System.EventHandler(this.TobiiCalibration_button_MouseLeave);
-            this.TobiiCalibration_button.MouseHover += new System.EventHandler(this.TobiiCalibration_button_MouseHover);
-            // 
             // HelpToturial_button
             // 
             this.HelpToturial_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
@@ -156,7 +190,7 @@
             this.HelpToturial_button.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.HelpToturial_button, "HelpToturial_button");
             this.HelpToturial_button.ForeColor = System.Drawing.Color.White;
-            this.HelpToturial_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.icons8_klassenzimmer_48;
+            this.HelpToturial_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.Help2;
             this.HelpToturial_button.Name = "HelpToturial_button";
             this.HelpToturial_button.UseVisualStyleBackColor = false;
             this.HelpToturial_button.Click += new System.EventHandler(this.HelpToturial_button_Click);
@@ -168,7 +202,7 @@
             this.MouseHidenMainForm_button.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.MouseHidenMainForm_button, "MouseHidenMainForm_button");
             this.MouseHidenMainForm_button.ForeColor = System.Drawing.Color.White;
-            this.MouseHidenMainForm_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.icons8_mauszeiger_50;
+            this.MouseHidenMainForm_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.cursor2;
             this.MouseHidenMainForm_button.Name = "MouseHidenMainForm_button";
             this.MouseHidenMainForm_button.UseVisualStyleBackColor = false;
             this.MouseHidenMainForm_button.Click += new System.EventHandler(this.MouseHidenMainForm_button_Click);
@@ -180,7 +214,7 @@
             this.Setup_button.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.Setup_button, "Setup_button");
             this.Setup_button.ForeColor = System.Drawing.Color.White;
-            this.Setup_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.icons8_einstellungen_48;
+            this.Setup_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.settings;
             this.Setup_button.Name = "Setup_button";
             this.Setup_button.UseVisualStyleBackColor = false;
             this.Setup_button.Click += new System.EventHandler(this.Setup_button_Click);
@@ -192,7 +226,7 @@
             this.Evaluation_button.FlatAppearance.BorderSize = 3;
             resources.ApplyResources(this.Evaluation_button, "Evaluation_button");
             this.Evaluation_button.ForeColor = System.Drawing.Color.White;
-            this.Evaluation_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.ffff;
+            this.Evaluation_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.test;
             this.Evaluation_button.Name = "Evaluation_button";
             this.Evaluation_button.UseVisualStyleBackColor = false;
             this.Evaluation_button.Click += new System.EventHandler(this.Evaluation_button_Click);
@@ -252,60 +286,25 @@
             this.MagniferUsingMouse_button.MouseLeave += new System.EventHandler(this.MagniferUsingMouse_MouseLeave);
             this.MagniferUsingMouse_button.MouseHover += new System.EventHandler(this.MagniferUsingMouse_MouseHover);
             // 
-            // pictureBox1
+            // TobiiCalibration_button
             // 
-            this.pictureBox1.Image = global::MagnifierSoftwareV_1.Properties.Resources.Eyetracker1;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.TobiiCalibration_button.BackColor = System.Drawing.Color.White;
+            this.TobiiCalibration_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.TobiiCalibration_button.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.TobiiCalibration_button, "TobiiCalibration_button");
+            this.TobiiCalibration_button.ForeColor = System.Drawing.Color.Black;
+            this.TobiiCalibration_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.calibration_mark1;
+            this.TobiiCalibration_button.Name = "TobiiCalibration_button";
+            this.TobiiCalibration_button.UseVisualStyleBackColor = false;
+            this.TobiiCalibration_button.Click += new System.EventHandler(this.Button1_Click_2);
+            this.TobiiCalibration_button.MouseLeave += new System.EventHandler(this.TobiiCalibration_button_MouseLeave);
+            this.TobiiCalibration_button.MouseHover += new System.EventHandler(this.TobiiCalibration_button_MouseHover);
             // 
-            // Exit_button
+            // label7
             // 
-            this.Exit_button.BackColor = System.Drawing.Color.White;
-            this.Exit_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.Exit_button.FlatAppearance.BorderSize = 3;
-            resources.ApplyResources(this.Exit_button, "Exit_button");
-            this.Exit_button.ForeColor = System.Drawing.Color.Transparent;
-            this.Exit_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.delete1;
-            this.Exit_button.Name = "Exit_button";
-            this.Exit_button.UseVisualStyleBackColor = false;
-            this.Exit_button.Click += new System.EventHandler(this.Exit_button_Click);
-            // 
-            // MiniMize_button
-            // 
-            this.MiniMize_button.BackColor = System.Drawing.Color.White;
-            this.MiniMize_button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.MiniMize_button.FlatAppearance.BorderSize = 3;
-            resources.ApplyResources(this.MiniMize_button, "MiniMize_button");
-            this.MiniMize_button.ForeColor = System.Drawing.Color.Transparent;
-            this.MiniMize_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.minimize;
-            this.MiniMize_button.Name = "MiniMize_button";
-            this.MiniMize_button.UseVisualStyleBackColor = false;
-            this.MiniMize_button.Click += new System.EventHandler(this.MiniMize_button_Click);
-            // 
-            // ZoomIn_button
-            // 
-            this.ZoomIn_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.ZoomIn_button.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ZoomIn_button.FlatAppearance.BorderSize = 3;
-            resources.ApplyResources(this.ZoomIn_button, "ZoomIn_button");
-            this.ZoomIn_button.ForeColor = System.Drawing.Color.Black;
-            this.ZoomIn_button.Image = global::MagnifierSoftwareV_1.Properties.Resources.zooming_magnifying_glass;
-            this.ZoomIn_button.Name = "ZoomIn_button";
-            this.ZoomIn_button.UseVisualStyleBackColor = false;
-            this.ZoomIn_button.Click += new System.EventHandler(this.ZoomIn_button_Click);
-            // 
-            // ZoomOutbutton
-            // 
-            this.ZoomOutbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
-            this.ZoomOutbutton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.ZoomOutbutton.FlatAppearance.BorderSize = 3;
-            resources.ApplyResources(this.ZoomOutbutton, "ZoomOutbutton");
-            this.ZoomOutbutton.ForeColor = System.Drawing.Color.White;
-            this.ZoomOutbutton.Image = global::MagnifierSoftwareV_1.Properties.Resources.zoom_out;
-            this.ZoomOutbutton.Name = "ZoomOutbutton";
-            this.ZoomOutbutton.UseVisualStyleBackColor = false;
-            this.ZoomOutbutton.Click += new System.EventHandler(this.ZoomOutbutton_Click);
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Name = "label7";
             // 
             // MagnifierMainForm
             // 
@@ -332,9 +331,9 @@
             this.Name = "MagnifierMainForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

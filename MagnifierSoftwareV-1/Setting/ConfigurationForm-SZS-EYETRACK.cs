@@ -111,22 +111,22 @@ namespace MagnifierSoftwareV_1.MouseMove
         private void SetComboBox1Text()
         {
             if (mConfiguration.bothEye)
-                comboBox1.Text = "Both eyes";
+                comboBox1.Text = "Bothe Eye";
             else if (mConfiguration.bothEyeAndHead)
-                comboBox1.Text = "Both eyes and head";
+                comboBox1.Text = "Bothe Eye and Head";
 
             else if (mConfiguration.rightEye)
-                comboBox1.Text = "Right eye";
+                comboBox1.Text = "Right Eye";
             else if (mConfiguration.rightEyeAndHead)
-                comboBox1.Text = "Right eye and head";
+                comboBox1.Text = "Right Eye and Head";
 
             else if (mConfiguration.leftEye)
-                comboBox1.Text = "Left eye";
+                comboBox1.Text = "Left Eye";
             else if (mConfiguration.leftEyeAndHead)
-                comboBox1.Text = "Left eye and head";
+                comboBox1.Text = "Left Eye and Head";
 
             else if (mConfiguration.justHead)
-                comboBox1.Text = "Just head";
+                comboBox1.Text = "Just Head";
         }
 
         //Set ComboBox Text
@@ -423,7 +423,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.normal = false;
                     mConfiguration.tritanopia = false;
                     break;
-                case "Tritanopia------------Blue Yellow CB":
+                case "Tritanopia------------Blue Yellown CB":
                     mConfiguration.tritanopia = true;
                     mConfiguration.currentColorBlindness = "tritanopia";
                     mConfiguration.invertColors = false;
@@ -695,7 +695,7 @@ namespace MagnifierSoftwareV_1.MouseMove
             switch ((String)selectEyeComboBox.SelectedItem)
             {
 
-                case "Both eyes + head":
+                case "Both Eye + Head":
                     // controller.setMode(MouseController.Mode.BOTH_EYE_AND_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = true;
@@ -706,7 +706,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Both eyes":
+                case "Both Eye":
                     // controller.setMode(MouseController.Mode.LEFT_EYE_AND_HEAD);
                     mConfiguration.bothEye = true;
                     mConfiguration.bothEyeAndHead = false;
@@ -717,7 +717,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Left eye + head":
+                case "Left Eye + Head":
                     // controller.setMode(MouseController.Mode.LEFT_EYE_AND_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = false;
@@ -728,7 +728,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Left eye":
+                case "Left Eye":
                     // controller.setMode(MouseController.Mode.LEFT_EYE_AND_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = false;
@@ -739,7 +739,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Right eye + head":
+                case "Right Eye + Head":
                     // controller.setMode(MouseController.Mode.RIGHT_EYE_AND_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = false;
@@ -750,7 +750,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Right eye":
+                case "Right Eye":
                     // controller.setMode(MouseController.Mode.RIGHT_EYE_AND_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = false;
@@ -761,7 +761,7 @@ namespace MagnifierSoftwareV_1.MouseMove
                     mConfiguration.justHead = false;
                     break;
 
-                case "Just head":
+                case "Just Head":
                     // controller.setMode(MouseController.Mode.JUST_HEAD);
                     mConfiguration.bothEye = false;
                     mConfiguration.bothEyeAndHead = false;
@@ -983,6 +983,5 @@ namespace MagnifierSoftwareV_1.MouseMove
             }
         }
 
-  
     }
 }

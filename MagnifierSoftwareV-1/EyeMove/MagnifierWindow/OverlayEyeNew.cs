@@ -46,6 +46,8 @@ namespace MagnifierSoftwareV_1.EyeMove
         private float temp = 0;
         private string tempString;
 
+        private string tempF9;
+
         int count = 0;
 
         public void setTargetPoint(PointF value)
@@ -660,6 +662,7 @@ namespace MagnifierSoftwareV_1.EyeMove
 
                             if (mConfiguration.invertColors == true)
                             {
+                                tempF9 = "invertColors";
                                 BeginInvoke(new MethodInvoker(delegate
                                 {
                                     mConfiguration.normal = true;

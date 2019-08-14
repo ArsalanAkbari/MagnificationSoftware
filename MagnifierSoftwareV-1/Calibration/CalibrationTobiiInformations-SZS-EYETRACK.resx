@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>- This is the tobii calibration process. During the calibration, please focus on the Point until it disappears.
+    <value>- This is the Tobii calibration process. During the Calibration, please focus on the Point until it disappears.
 
-- Before starting the calibration, please choose the calibration Mode (Right/Left/Both eyes). 
+- Before starting the Calibration, please choose the calibration Mode (Right/Left/Both eyes). 
 </value>
   </data>
 </root>

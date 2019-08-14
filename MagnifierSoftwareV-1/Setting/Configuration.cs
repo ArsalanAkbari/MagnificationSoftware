@@ -49,6 +49,7 @@ namespace MagnifierSoftwareV_1
         public bool tritanomaly = false;
         public bool achromatopsia = false;
         public bool achromatomaly = false;
+        public string currentColorBlindness = "normal";
 
 
         //Select the Eyetracking Mode

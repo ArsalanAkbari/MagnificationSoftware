@@ -38,7 +38,8 @@ namespace MagnifierSoftwareV_1.EyeMove
 
             //tracking Eye
             mConfiguration = configuration;
-            samples = new Point[10];
+            //10
+            samples = new Point[20];
             warpThreshold = 400;
             warpThresholdWidth = mConfiguration.MagnifierWidth;
             warpThresholdHight = mConfiguration.MagnifierHeight;

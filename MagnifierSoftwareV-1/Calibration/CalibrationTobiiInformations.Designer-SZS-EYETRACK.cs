@@ -252,9 +252,9 @@
             this.RightEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RightEye_checkBox.Location = new System.Drawing.Point(576, 207);
             this.RightEye_checkBox.Name = "RightEye_checkBox";
-            this.RightEye_checkBox.Size = new System.Drawing.Size(169, 40);
+            this.RightEye_checkBox.Size = new System.Drawing.Size(173, 40);
             this.RightEye_checkBox.TabIndex = 111;
-            this.RightEye_checkBox.Text = "Right eye";
+            this.RightEye_checkBox.Text = "Right Eye";
             this.RightEye_checkBox.UseVisualStyleBackColor = true;
             this.RightEye_checkBox.CheckedChanged += new System.EventHandler(this.RightEye_checkBox_CheckedChanged);
             // 
@@ -265,9 +265,9 @@
             this.LeftEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LeftEye_checkBox.Location = new System.Drawing.Point(363, 207);
             this.LeftEye_checkBox.Name = "LeftEye_checkBox";
-            this.LeftEye_checkBox.Size = new System.Drawing.Size(146, 40);
+            this.LeftEye_checkBox.Size = new System.Drawing.Size(150, 40);
             this.LeftEye_checkBox.TabIndex = 110;
-            this.LeftEye_checkBox.Text = "Left eye";
+            this.LeftEye_checkBox.Text = "Left Eye";
             this.LeftEye_checkBox.UseVisualStyleBackColor = true;
             this.LeftEye_checkBox.CheckedChanged += new System.EventHandler(this.LeftEye_checkBox_CheckedChanged);
             // 
@@ -281,9 +281,9 @@
             this.BothEye_checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BothEye_checkBox.Location = new System.Drawing.Point(782, 207);
             this.BothEye_checkBox.Name = "BothEye_checkBox";
-            this.BothEye_checkBox.Size = new System.Drawing.Size(175, 40);
+            this.BothEye_checkBox.Size = new System.Drawing.Size(163, 40);
             this.BothEye_checkBox.TabIndex = 109;
-            this.BothEye_checkBox.Text = "Both eyes";
+            this.BothEye_checkBox.Text = "Both Eye";
             this.BothEye_checkBox.UseVisualStyleBackColor = true;
             this.BothEye_checkBox.CheckedChanged += new System.EventHandler(this.BothEye_checkBox_CheckedChanged);
             // 

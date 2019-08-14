@@ -118,17 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>- Please first enter your Name and Chose the Eye-Tracking mode.
+    <value>- Please first enter your name and chose the Eye-Tracking mode.
 
-- During the Test You should follow the Center of Red ball (as you see in left side of the screen) with your eyes
+- During the test You should follow the center of red ball (as you see in left side of the screen) with your eyes
 
-- Overall you have 6 diffrent Tests.
+- Overall you have 6 diffrent tests.
 
 - Between each of the tests you have 3 seconds time.
 
-- After these 6 test, as the result of your Test , the chart with true and False gaze point will be showing.
+- After these 6 test, as the result of your test , the chart with true and false gaze point will be showing.
 
-- You can also adjust the accuracy of the Chart (Size of the Ball).  
+- You can also adjust the accuracy of the chart (size of the ball).  
    please Attention that:
                  # The sensitivity of the Test is related to size of the ball (40 is default).
 

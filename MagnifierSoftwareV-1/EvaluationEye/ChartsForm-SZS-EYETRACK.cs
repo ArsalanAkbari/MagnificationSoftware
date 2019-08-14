@@ -67,70 +67,70 @@ namespace MagnifierSoftwareV_1.EvaluationEye
 
             if (both >= 80 && left >= 80 && right >= 80)
             {
-                label1.Text = " You are a user with no problems in your eyes and you can chose any eye tracking options!";
+                label1.Text = " You are a Normal User with no problems and you can chose any eye tracking Options!";
                 mConfiguration.bothEye = true;
                 mConfiguration.whereIamPointFollowsEyes = true;
             }
 
             else if (both >= 70 && left >= 70 && right >= 70)
             {
-                label1.Text = " You are a user with no problems in your eyes and you can chose any eye tracking options!";
+                label1.Text = " You are a Normal User with no problems and you can chose any eye tracking Options!";
                 mConfiguration.bothEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (both >= 70 && left >= 70 && right < 70)
             {
-                label1.Text = " The best choice for you is both eyes option or left eye option!";
+                label1.Text = " The best Choice for you is Both eye option or LeftEye option!";
                 mConfiguration.bothEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (both >= 70 && left < 70 && right >= 70)
             {
-                label1.Text = " The best choice for you is both eyes option or right eye option!";
+                label1.Text = " The best Choice for you is Both eye option or rightEye option!";
                 mConfiguration.bothEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (both < 70 && left < 70 && right >= 70)
             {
-                label1.Text = " The best choice for you is right eye option!";
+                label1.Text = " The best Choice for you is rightEye option!";
                 mConfiguration.rightEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (both < 70 && left >= 70 && right< 70)
             {
-                label1.Text = " The best choice for you is left eye option!";
+                label1.Text = " The best Choice for you is LeftEye option!";
                 mConfiguration.leftEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (both < 10 && left < 10 && right < 10)
             {
-                label1.Text = "Probably you should better to chose the head tracking option";
+                label1.Text = "Probably you should better to chose the Head Tracking option";
                 mConfiguration.justHead = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (Math.Max(Math.Max(both, right), left) == both)
             {
-                label1.Text = " The best choice for you is the both eyes option";
+                label1.Text = " The Best Choice for you is the BothEye Option";
                 mConfiguration.bothEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (Math.Max(Math.Max(both, right), left) == right)
             {
-                label1.Text = " The best choice for you is the right eye option";
+                label1.Text = " The Best Choice for you is the rightEye Option";
                 mConfiguration.rightEye = true;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
 
             else if (Math.Max(Math.Max(both, right), left) == left)
             {
-                label1.Text = " The best choice for you is the leftt eye option";
+                label1.Text = " The Best Choice for you is the lefttEye Option";
                 mConfiguration.leftEye = false;
                 mConfiguration.whereIamPointFollowsEyes = false;
             }
